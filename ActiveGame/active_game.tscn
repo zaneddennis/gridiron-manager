@@ -1,0 +1,439 @@
+[gd_scene load_steps=11 format=3 uid="uid://ch0hoy3haxxhc"]
+
+[ext_resource type="Script" uid="uid://dil3t2hgmaa6b" path="res://ActiveGame/active_game.gd" id="1_loo5d"]
+[ext_resource type="PackedScene" uid="uid://cvtp0myfbmces" path="res://ActiveGame/UI/Pages/System/system_page.tscn" id="2_bd78g"]
+[ext_resource type="Script" uid="uid://dm4rei66a244h" path="res://ActiveGame/UI/ui_manager.gd" id="2_t2vb5"]
+[ext_resource type="Script" uid="uid://x3awcoyo8khv" path="res://ActiveGame/UI/Pages/Home/home_page.gd" id="3_pnd58"]
+[ext_resource type="Texture2D" uid="uid://b5aqqx1c5xg8o" path="res://Data/Data/Images/Logos/Final/DEFAULT.png" id="4_18g3j"]
+[ext_resource type="Script" uid="uid://cowrbi5dkjgfw" path="res://ActiveGame/UI/Pages/Home/next_game_widget.gd" id="4_cox2x"]
+[ext_resource type="PackedScene" uid="uid://buw6gkuexrfjx" path="res://ActiveGame/UI/Pages/Tasks/placeholder_task.tscn" id="5_g0xq8"]
+[ext_resource type="PackedScene" uid="uid://dbetr47rrvggr" path="res://ActiveGame/UI/Widgets/Schedule/schedule_widget.tscn" id="5_i6i7d"]
+[ext_resource type="PackedScene" uid="uid://bpnffjui2mw45" path="res://ActiveGame/UI/Pages/Home/standings_page.tscn" id="7_7huaj"]
+[ext_resource type="PackedScene" uid="uid://cty2u6g5v2276" path="res://ActiveGame/UI/Pages/Tasks/Gameday/gameday.tscn" id="9_c3yoy"]
+
+[node name="ActiveGame" type="Node"]
+script = ExtResource("1_loo5d")
+
+[node name="UI" type="CanvasLayer" parent="." node_paths=PackedStringArray("ag")]
+script = ExtResource("2_t2vb5")
+ag = NodePath("..")
+
+[node name="Background" type="ColorRect" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBox" type="VBoxContainer" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopBar" type="Panel" parent="UI/VBox"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Timestamp" type="Label" parent="UI/VBox/TopBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -11.5
+offset_right = 89.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Phase Phase - Week XX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="System" type="Button" parent="UI/VBox/TopBar"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "MENU"
+
+[node name="Pages" type="Control" parent="UI/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Home" type="VBoxContainer" parent="UI/VBox/Pages"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 16.0
+offset_right = -32.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("3_pnd58")
+
+[node name="TaskButtons" type="HBoxContainer" parent="UI/VBox/Pages/Home"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+alignment = 1
+
+[node name="Spacer" type="Control" parent="UI/VBox/Pages/Home/TaskButtons"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+
+[node name="Button0" type="Button" parent="UI/VBox/Pages/Home/TaskButtons"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "Task"
+
+[node name="Button1" type="Button" parent="UI/VBox/Pages/Home/TaskButtons"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "Task"
+
+[node name="Button2" type="Button" parent="UI/VBox/Pages/Home/TaskButtons"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "Task"
+
+[node name="Button3" type="Button" parent="UI/VBox/Pages/Home/TaskButtons"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "Task"
+
+[node name="Button4" type="Button" parent="UI/VBox/Pages/Home/TaskButtons"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "Task"
+
+[node name="Button5" type="Button" parent="UI/VBox/Pages/Home/TaskButtons"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "Task"
+
+[node name="Button6" type="Button" parent="UI/VBox/Pages/Home/TaskButtons"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "Task"
+
+[node name="Button7" type="Button" parent="UI/VBox/Pages/Home/TaskButtons"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "Task"
+
+[node name="NextWeek" type="Button" parent="UI/VBox/Pages/Home/TaskButtons"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+disabled = true
+text = "To Next Week >"
+
+[node name="Spacer2" type="Control" parent="UI/VBox/Pages/Home/TaskButtons"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+
+[node name="Top" type="HBoxContainer" parent="UI/VBox/Pages/Home"]
+custom_minimum_size = Vector2(0, 320)
+layout_mode = 2
+alignment = 1
+
+[node name="Expectations" type="VBoxContainer" parent="UI/VBox/Pages/Home/Top"]
+custom_minimum_size = Vector2(256, 288)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_type_variation = &"FlatPanel"
+
+[node name="Label" type="Label" parent="UI/VBox/Pages/Home/Top/Expectations"]
+layout_mode = 2
+text = "Season Expectations"
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="UI/VBox/Pages/Home/Top/Expectations"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"FlatPanel"
+
+[node name="VSeparator" type="VSeparator" parent="UI/VBox/Pages/Home/Top"]
+layout_mode = 2
+
+[node name="NextGame" type="VBoxContainer" parent="UI/VBox/Pages/Home/Top"]
+custom_minimum_size = Vector2(762, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("4_cox2x")
+
+[node name="Label" type="Label" parent="UI/VBox/Pages/Home/Top/NextGame"]
+layout_mode = 2
+text = "Next Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Conference" type="Label" parent="UI/VBox/Pages/Home/Top/NextGame"]
+layout_mode = 2
+text = "[Non-Conference]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBox" type="HBoxContainer" parent="UI/VBox/Pages/Home/Top/NextGame"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Away" type="VBoxContainer" parent="UI/VBox/Pages/Home/Top/NextGame/HBox"]
+layout_mode = 2
+size_flags_horizontal = 6
+alignment = 1
+
+[node name="Panel" type="Panel" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Away"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_type_variation = &"FlatPanel"
+
+[node name="Logo" type="TextureRect" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Away/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_18g3j")
+expand_mode = 1
+
+[node name="School" type="Label" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Away"]
+layout_mode = 2
+text = "School School School"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mascot" type="Label" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Away"]
+layout_mode = 2
+text = "Mascot"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Record" type="Label" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Away"]
+layout_mode = 2
+text = "0 - 0 (0 - 0 CONF)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VsAt" type="Label" parent="UI/VBox/Pages/Home/Top/NextGame/HBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "@"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Home" type="VBoxContainer" parent="UI/VBox/Pages/Home/Top/NextGame/HBox"]
+layout_mode = 2
+size_flags_horizontal = 6
+alignment = 1
+
+[node name="Panel" type="Panel" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Home"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_type_variation = &"FlatPanel"
+
+[node name="Logo" type="TextureRect" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Home/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_18g3j")
+expand_mode = 1
+
+[node name="School" type="Label" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Home"]
+layout_mode = 2
+text = "School School School"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mascot" type="Label" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Home"]
+layout_mode = 2
+text = "Mascot"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Record" type="Label" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Home"]
+layout_mode = 2
+text = "0 - 0 (0 - 0 CONF)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="UI/VBox/Pages/Home/Top"]
+layout_mode = 2
+
+[node name="Schedule" type="VBoxContainer" parent="UI/VBox/Pages/Home/Top"]
+custom_minimum_size = Vector2(256, 288)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_type_variation = &"FlatPanel"
+
+[node name="Label" type="Label" parent="UI/VBox/Pages/Home/Top/Schedule"]
+layout_mode = 2
+text = "Season Schedule"
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="UI/VBox/Pages/Home/Top/Schedule"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"FlatPanel"
+
+[node name="ScheduleWidget" parent="UI/VBox/Pages/Home/Top/Schedule/Panel" instance=ExtResource("5_i6i7d")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSeparator" type="HSeparator" parent="UI/VBox/Pages/Home"]
+layout_mode = 2
+
+[node name="Bottom" type="HBoxContainer" parent="UI/VBox/Pages/Home"]
+custom_minimum_size = Vector2(0, 320)
+layout_mode = 2
+alignment = 1
+
+[node name="Control" type="Control" parent="UI/VBox/Pages/Home/Bottom"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VSeparator" type="VSeparator" parent="UI/VBox/Pages/Home/Bottom"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Control2" type="Control" parent="UI/VBox/Pages/Home/Bottom"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VSeparator2" type="VSeparator" parent="UI/VBox/Pages/Home/Bottom"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Control3" type="Control" parent="UI/VBox/Pages/Home/Bottom"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VSeparator3" type="VSeparator" parent="UI/VBox/Pages/Home/Bottom"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Standings" type="VBoxContainer" parent="UI/VBox/Pages/Home/Bottom"]
+custom_minimum_size = Vector2(256, 288)
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Label" type="Label" parent="UI/VBox/Pages/Home/Bottom/Standings"]
+layout_mode = 2
+text = "Conference Standings"
+
+[node name="Panel" type="Panel" parent="UI/VBox/Pages/Home/Bottom/Standings"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"FlatPanel"
+
+[node name="Standings" parent="UI/VBox/Pages" instance=ExtResource("7_7huaj")]
+visible = false
+layout_mode = 1
+
+[node name="System" parent="UI/VBox/Pages" instance=ExtResource("2_bd78g")]
+visible = false
+layout_mode = 1
+
+[node name="PlaceholderTask" parent="UI/VBox/Pages" instance=ExtResource("5_g0xq8")]
+visible = false
+layout_mode = 1
+
+[node name="PageButtons" type="HBoxContainer" parent="UI/VBox"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+alignment = 1
+
+[node name="News" type="Button" parent="UI/VBox/PageButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+disabled = true
+text = "News"
+
+[node name="Schedules" type="Button" parent="UI/VBox/PageButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+disabled = true
+text = "Schedules"
+
+[node name="Standings" type="Button" parent="UI/VBox/PageButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Standings"
+
+[node name="Statistics" type="Button" parent="UI/VBox/PageButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+disabled = true
+text = "Statistics"
+
+[node name="Strategy" type="Button" parent="UI/VBox/PageButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+disabled = true
+text = "Strategy"
+
+[node name="MySchool" type="Button" parent="UI/VBox/PageButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+disabled = true
+text = "My School"
+
+[node name="MyProfile" type="Button" parent="UI/VBox/PageButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+disabled = true
+text = "My Profile"
+
+[node name="Ticker" type="Panel" parent="UI/VBox"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Gameday" parent="UI" instance=ExtResource("9_c3yoy")]
+visible = false
+
+[connection signal="pressed" from="UI/VBox/TopBar/System" to="UI" method="_on_system_pressed"]
+[connection signal="open_task" from="UI/VBox/Pages/Home" to="." method="_on_home_open_task"]
+[connection signal="pressed" from="UI/VBox/Pages/Home/TaskButtons/NextWeek" to="." method="_on_week_completed"]
+[connection signal="task_completed" from="UI/VBox/Pages/PlaceholderTask" to="." method="_on_task_completed"]
+[connection signal="task_completed" from="UI/Gameday" to="." method="_on_task_completed"]

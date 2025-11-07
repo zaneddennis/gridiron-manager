@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://buw6gkuexrfjx"]
+
+[ext_resource type="PackedScene" uid="uid://cys3ujj0lf2n5" path="res://ActiveGame/UI/Pages/Tasks/task_page.tscn" id="1_nv311"]
+[ext_resource type="Script" uid="uid://b2jmjg5hichux" path="res://ActiveGame/UI/Pages/Tasks/placeholder_task_page.gd" id="2_7jd52"]
+[ext_resource type="Resource" uid="uid://c2rl6rvekag0u" path="res://Data/Data/Resources/Tasks/placeholder_task.tres" id="3_nv8ex"]
+
+[node name="PlaceholderTask" instance=ExtResource("1_nv311")]
+script = ExtResource("2_7jd52")
+task = ExtResource("3_nv8ex")
+
+[node name="Panel_ScrollContainer_VBox#Button" type="Button" parent="Panel/ScrollBox/VBox" index="2"]
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Complete Task"
+
+[connection signal="pressed" from="Panel/ScrollBox/VBox/Panel_ScrollContainer_VBox#Button" to="." method="_on_button_pressed"]

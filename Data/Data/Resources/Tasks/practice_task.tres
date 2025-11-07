@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Task" load_steps=2 format=3 uid="uid://c2icof0jf6ewf"]
+
+[ext_resource type="Script" uid="uid://bos32gtlloat2" path="res://Data/DataModels/task.gd" id="1_6ufnx"]
+
+[resource]
+script = ExtResource("1_6ufnx")
+display_name = "Team Practice"
+metadata/_custom_type_script = "uid://bos32gtlloat2"

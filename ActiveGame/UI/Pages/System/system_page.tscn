@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvtp0myfbmces"]
+
+[ext_resource type="PackedScene" uid="uid://4n76kexbw5gh" path="res://ActiveGame/UI/Pages/page.tscn" id="1_fnvna"]
+[ext_resource type="Script" uid="uid://far5d4awfw8g" path="res://ActiveGame/UI/Pages/System/system_page.gd" id="2_sfeet"]
+
+[node name="System" instance=ExtResource("1_fnvna")]
+script = ExtResource("2_sfeet")
+
+[node name="Panel" parent="." index="0"]
+custom_minimum_size = Vector2(256, 512)
+
+[node name="VBox" type="VBoxContainer" parent="Panel" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resume" type="Button" parent="Panel/VBox" index="0"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Resume"
+
+[node name="Options" type="Button" parent="Panel/VBox" index="1"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Options"
+
+[node name="MainMenu" type="Button" parent="Panel/VBox" index="2"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Exit to Main Menu"
+
+[node name="Desktop" type="Button" parent="Panel/VBox" index="3"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Exit to Desktop"
+
+[connection signal="pressed" from="Panel/VBox/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Panel/VBox/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Panel/VBox/Desktop" to="." method="_on_desktop_pressed"]

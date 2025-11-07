@@ -1,0 +1,20 @@
+[gd_scene load_steps=9 format=3 uid="uid://b3bwxs24w8ayh"]
+
+[ext_resource type="Script" uid="uid://bj2an1khqhk62" path="res://ActiveGame/task_scheduler.gd" id="1_tj0if"]
+[ext_resource type="Resource" uid="uid://c2rl6rvekag0u" path="res://Data/Data/Resources/Tasks/placeholder_task.tres" id="2_rmljv"]
+[ext_resource type="Resource" uid="uid://7jx3e7hglop8" path="res://Data/Data/Resources/Tasks/medical_task.tres" id="3_ij8df"]
+[ext_resource type="Resource" uid="uid://bypv7qds7y0oh" path="res://Data/Data/Resources/Tasks/recruiting_task.tres" id="4_j3jwf"]
+[ext_resource type="Resource" uid="uid://byyotdtumvsmx" path="res://Data/Data/Resources/Tasks/scouting_task.tres" id="5_16vos"]
+[ext_resource type="Resource" uid="uid://c24yxyifjko5x" path="res://Data/Data/Resources/Tasks/gameplanning_task.tres" id="6_j3jwf"]
+[ext_resource type="Resource" uid="uid://bc74pwsl12e21" path="res://Data/Data/Resources/Tasks/gameday_task.tres" id="6_p5k0u"]
+[ext_resource type="Resource" uid="uid://c2icof0jf6ewf" path="res://Data/Data/Resources/Tasks/practice_task.tres" id="7_qnthv"]
+
+[node name="TaskScheduler" type="Node"]
+script = ExtResource("1_tj0if")
+placeholder = ExtResource("2_rmljv")
+medical = ExtResource("3_ij8df")
+recruiting = ExtResource("4_j3jwf")
+scouting = ExtResource("5_16vos")
+gameplan = ExtResource("6_j3jwf")
+practice = ExtResource("7_qnthv")
+gameday = ExtResource("6_p5k0u")

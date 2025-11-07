@@ -1,0 +1,120 @@
+[gd_scene load_steps=5 format=3 uid="uid://7lckr6cdt8x1"]
+
+[ext_resource type="Script" uid="uid://dvw66tfx7hcbv" path="res://ActiveGame/UI/Widgets/box_score_summary_widget.gd" id="1_ixoi3"]
+[ext_resource type="Texture2D" uid="uid://b5aqqx1c5xg8o" path="res://Data/Data/Images/Logos/Final/DEFAULT.png" id="1_t0lgw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ixoi3"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_t0lgw"]
+font_size = 12
+
+[node name="BoxScoreSummaryWidget" type="Panel"]
+custom_minimum_size = Vector2(400, 200)
+size_flags_horizontal = 6
+script = ExtResource("1_ixoi3")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Away" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Logo" type="TextureRect" parent="VBox/Away"]
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("1_t0lgw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Spacer" type="Control" parent="VBox/Away"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="School" type="Label" parent="VBox/Away"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "School"
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="VBox/Away"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+text = "00"
+label_settings = SubResource("LabelSettings_ixoi3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBox"]
+layout_mode = 2
+
+[node name="Home" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Logo" type="TextureRect" parent="VBox/Home"]
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("1_t0lgw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Spacer" type="Control" parent="VBox/Home"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="School" type="Label" parent="VBox/Home"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "School"
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="VBox/Home"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+text = "00"
+label_settings = SubResource("LabelSettings_ixoi3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Footer" type="Panel" parent="VBox"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_type_variation = &"FlatPanel"
+
+[node name="HBox" type="HBoxContainer" parent="VBox/Footer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Final" type="Label" parent="VBox/Footer/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Final"
+label_settings = SubResource("LabelSettings_t0lgw")
+vertical_alignment = 1
+
+[node name="Conf" type="Label" parent="VBox/Footer/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "CONF"
+label_settings = SubResource("LabelSettings_t0lgw")
+horizontal_alignment = 2
+vertical_alignment = 1

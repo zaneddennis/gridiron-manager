@@ -1,0 +1,157 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfwb8ugcqpai0"]
+
+[ext_resource type="Script" uid="uid://cy0ipt6c5huu3" path="res://MainMenu/NewGame/new_game_setup.gd" id="1_lohqt"]
+[ext_resource type="PackedScene" uid="uid://cwhumtwtawv3b" path="res://MainMenu/NewGame/select_school_widget.tscn" id="2_m7eh3"]
+[ext_resource type="Texture2D" uid="uid://c3p12wiiof1r4" path="res://Data/Data/Images/StockArt/pexels-kelly-28239821.jpg" id="2_osv4v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iirw2"]
+atlas = ExtResource("2_osv4v")
+region = Rect2(117.458, 1957.41, 4607.4, 2995.62)
+
+[node name="NewGameSetup" type="CanvasLayer"]
+script = ExtResource("1_lohqt")
+SelectSchoolWidgetScene = ExtResource("2_m7eh3")
+
+[node name="Background" type="TextureRect" parent="."]
+self_modulate = Color(0.25, 0.25, 0.25, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -70.078125
+offset_bottom = 70.078125
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_iirw2")
+expand_mode = 5
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(1200, 800)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -384.0
+offset_right = 512.0
+offset_bottom = 384.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 16.0
+offset_right = -8.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBox" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Coach" type="VBoxContainer" parent="Panel/VBoxContainer/HBox"]
+custom_minimum_size = Vector2(512, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBox/Coach"]
+layout_mode = 2
+text = "Create Coach"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer/HBox/Coach"]
+layout_mode = 2
+
+[node name="First" type="HBoxContainer" parent="Panel/VBoxContainer/HBox/Coach"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBox/Coach/First"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "First:"
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Panel/VBoxContainer/HBox/Coach/First"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+text = "John"
+clear_button_enabled = true
+
+[node name="Last" type="HBoxContainer" parent="Panel/VBoxContainer/HBox/Coach"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBox/Coach/Last"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "First:"
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Panel/VBoxContainer/HBox/Coach/Last"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Smith"
+clear_button_enabled = true
+
+[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/HBox"]
+layout_mode = 2
+
+[node name="School" type="VBoxContainer" parent="Panel/VBoxContainer/HBox"]
+custom_minimum_size = Vector2(512, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBox/School"]
+layout_mode = 2
+text = "Select Starting School"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer/HBox/School"]
+layout_mode = 2
+
+[node name="Selected" type="HBoxContainer" parent="Panel/VBoxContainer/HBox/School"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBox/School/Selected"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Selected:"
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/HBox/School/Selected"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "School"
+
+[node name="HSeparator2" type="HSeparator" parent="Panel/VBoxContainer/HBox/School"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer/HBox/School"]
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBox/School/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="StartGame" type="Button" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+text = "START GAME"
+
+[connection signal="pressed" from="Panel/VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]

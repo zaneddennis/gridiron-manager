@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmu6ebrhsc6uf"]
+
+[ext_resource type="Texture2D" uid="uid://b5aqqx1c5xg8o" path="res://Data/Data/Images/Logos/Final/DEFAULT.png" id="1_gxngp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gxngp"]
+font_size = 12
+
+[node name="ScheduleRow" type="HBoxContainer"]
+custom_minimum_size = Vector2(0, 24)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 24.0
+grow_horizontal = 2
+
+[node name="Week" type="Label" parent="."]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+text = "00"
+label_settings = SubResource("LabelSettings_gxngp")
+vertical_alignment = 1
+
+[node name="Vs" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "vs"
+label_settings = SubResource("LabelSettings_gxngp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OppLogo" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 6
+texture = ExtResource("1_gxngp")
+expand_mode = 1
+
+[node name="Opponent" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Opponent"
+label_settings = SubResource("LabelSettings_gxngp")
+horizontal_alignment = 1
+
+[node name="Result" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "T"
+label_settings = SubResource("LabelSettings_gxngp")
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0 - 0"
+label_settings = SubResource("LabelSettings_gxngp")
+horizontal_alignment = 1
+
+[node name="Conference" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-"
+label_settings = SubResource("LabelSettings_gxngp")
+horizontal_alignment = 1
+
+[node name="Bye" type="Label" parent="."]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "BYE"
+label_settings = SubResource("LabelSettings_gxngp")
+horizontal_alignment = 1
+vertical_alignment = 1

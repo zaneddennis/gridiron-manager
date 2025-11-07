@@ -1,0 +1,99 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwhumtwtawv3b"]
+
+[ext_resource type="Script" uid="uid://xnuj8l3odovw" path="res://MainMenu/NewGame/select_school_widget.gd" id="1_10ko5"]
+[ext_resource type="Texture2D" uid="uid://b5aqqx1c5xg8o" path="res://Data/Data/Images/Logos/Final/DEFAULT.png" id="2_ehuyw"]
+
+[node name="SelectSchoolWidget" type="Panel"]
+custom_minimum_size = Vector2(0, 96)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_vertical = 2
+script = ExtResource("1_10ko5")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="HBox" type="HBoxContainer" parent="Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="Spacer" type="Control" parent="Button/HBox"]
+layout_mode = 2
+
+[node name="Logo" type="Panel" parent="Button/HBox"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="Button/HBox/Logo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ehuyw")
+expand_mode = 1
+
+[node name="VBox" type="VBoxContainer" parent="Button/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Button/HBox/VBox"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="NameMascot" type="Label" parent="Button/HBox/VBox/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "School Mascots"
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="Button/HBox/VBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="Swatch0" type="ColorRect" parent="Button/HBox/VBox/HBoxContainer"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Swatch1" type="ColorRect" parent="Button/HBox/VBox/HBoxContainer"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Swatch2" type="ColorRect" parent="Button/HBox/VBox/HBoxContainer"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HSeparator" type="HSeparator" parent="Button/HBox/VBox"]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Conference" type="Label" parent="Button/HBox/VBox"]
+layout_mode = 2
+text = "CONF"
+
+[node name="Spacer2" type="Control" parent="Button/HBox"]
+layout_mode = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

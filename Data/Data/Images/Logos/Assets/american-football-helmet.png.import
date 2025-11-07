@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://c241nh65up7cp"
+path="res://.godot/imported/american-football-helmet.png-c50a5ba9acfa9e99eed527641cd5c6e2.image"
+
+[deps]
+
+source_file="res://Data/Data/Images/Logos/Assets/american-football-helmet.png"
+dest_files=["res://.godot/imported/american-football-helmet.png-c50a5ba9acfa9e99eed527641cd5c6e2.image"]
+
+[params]
+

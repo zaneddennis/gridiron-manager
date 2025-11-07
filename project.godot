@@ -1,0 +1,40 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="GridironManager"
+run/main_scene="uid://cin4svkcycpup"
+config/features=PackedStringArray("4.5", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+TransitionManager="*res://Util/transition_manager.tscn"
+TaskScheduler="*res://ActiveGame/task_scheduler.tscn"
+Database="*res://Data/Database/database.tscn"
+
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=900
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/csv-data-importer/plugin.cfg", "res://addons/godot-sqlite/plugin.cfg")
+
+[gui]
+
+theme/custom="uid://dj28h2sa1d5cd"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

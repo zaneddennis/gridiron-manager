@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbetr47rrvggr"]
+
+[ext_resource type="PackedScene" uid="uid://bmu6ebrhsc6uf" path="res://ActiveGame/UI/Widgets/Schedule/schedule_row.tscn" id="1_67wgc"]
+[ext_resource type="Script" uid="uid://bvisrt3xqax1e" path="res://ActiveGame/UI/Widgets/Schedule/schedule_widget.gd" id="1_agfuw"]
+
+[node name="ScheduleWidget" type="ScrollContainer"]
+custom_minimum_size = Vector2(256, 256)
+script = ExtResource("1_agfuw")
+RowScene = ExtResource("1_67wgc")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="ScheduleRow" parent="VBox" instance=ExtResource("1_67wgc")]
+layout_mode = 2
+
+[node name="ScheduleRow2" parent="VBox" instance=ExtResource("1_67wgc")]
+layout_mode = 2
+
+[node name="ScheduleRow3" parent="VBox" instance=ExtResource("1_67wgc")]
+layout_mode = 2

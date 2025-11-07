@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://bktxohrr06epg"]
+
+[ext_resource type="Script" uid="uid://dh12m7gfalkug" path="res://ActiveGame/UI/Widgets/Standings/standings_widget.gd" id="1_qcrf5"]
+[ext_resource type="PackedScene" uid="uid://2maaug7lln5l" path="res://ActiveGame/UI/Widgets/Standings/standings_row.tscn" id="2_r4w88"]
+
+[node name="StandingsWidget" type="VBoxContainer"]
+custom_minimum_size = Vector2(256, 0)
+offset_right = 256.0
+theme_override_constants/separation = 0
+script = ExtResource("1_qcrf5")
+
+[node name="StandingsRow" parent="." instance=ExtResource("2_r4w88")]
+layout_mode = 2
+
+[node name="StandingsRow2" parent="." instance=ExtResource("2_r4w88")]
+layout_mode = 2
+
+[node name="StandingsRow3" parent="." instance=ExtResource("2_r4w88")]
+layout_mode = 2
+
+[node name="StandingsRow4" parent="." instance=ExtResource("2_r4w88")]
+layout_mode = 2
+
+[node name="StandingsRow5" parent="." instance=ExtResource("2_r4w88")]
+layout_mode = 2
+
+[node name="StandingsRow6" parent="." instance=ExtResource("2_r4w88")]
+layout_mode = 2
+
+[node name="StandingsRow7" parent="." instance=ExtResource("2_r4w88")]
+layout_mode = 2
+
+[node name="StandingsRow8" parent="." instance=ExtResource("2_r4w88")]
+layout_mode = 2
+
+[node name="StandingsRow9" parent="." instance=ExtResource("2_r4w88")]
+layout_mode = 2
+
+[node name="StandingsRow10" parent="." instance=ExtResource("2_r4w88")]
+layout_mode = 2

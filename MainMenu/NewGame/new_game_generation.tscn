@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdmbgmuh2arxi"]
+
+[ext_resource type="Script" uid="uid://cxyvksn70u2i1" path="res://MainMenu/NewGame/new_game_generation.gd" id="1_o2i6q"]
+[ext_resource type="Texture2D" uid="uid://c3p12wiiof1r4" path="res://Data/Data/Images/StockArt/pexels-kelly-28239821.jpg" id="2_2jrnc"]
+[ext_resource type="Image" uid="uid://c241nh65up7cp" path="res://Data/Data/Images/Logos/Assets/american-football-helmet.png" id="2_tf7og"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tf7og"]
+atlas = ExtResource("2_2jrnc")
+region = Rect2(117.458, 1957.41, 4607.4, 2995.62)
+
+[node name="NewGameGeneration" type="CanvasLayer"]
+script = ExtResource("1_o2i6q")
+default_logo = ExtResource("2_tf7og")
+
+[node name="Background" type="TextureRect" parent="."]
+self_modulate = Color(0.25, 0.25, 0.25, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -70.078125
+offset_bottom = 70.078125
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_tf7og")
+expand_mode = 5
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(512, 256)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -128.0
+offset_right = 256.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InitDB" type="Label" parent="Panel/VBox"]
+visible = false
+layout_mode = 2
+text = "Initializing Database..."
+
+[node name="GenCoaches" type="Label" parent="Panel/VBox"]
+visible = false
+layout_mode = 2
+text = "Generating Coaches..."
+
+[node name="GenPlayers" type="Label" parent="Panel/VBox"]
+visible = false
+layout_mode = 2
+text = "Generating Players..."
+
+[node name="HireCoaches" type="Label" parent="Panel/VBox"]
+visible = false
+layout_mode = 2
+text = "Hiring Coaches to Schools..."
+
+[node name="Croots" type="Label" parent="Panel/VBox"]
+visible = false
+layout_mode = 2
+text = "Recruiting Players to Schools..."
+
+[node name="Spacer" type="Control" parent="Panel/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Start" type="Button" parent="Panel/VBox"]
+visible = false
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 2
+text = "Next >"
+
+[connection signal="pressed" from="Panel/VBox/Start" to="." method="_on_start_pressed"]

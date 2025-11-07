@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdbnhwl4wphwa"]
+
+[ext_resource type="Script" uid="uid://dq5nnc335jnod" path="res://Util/logo_creator.gd" id="1_g7bx7"]
+[ext_resource type="Texture2D" uid="uid://bmpg28jjvytma" path="res://Data/Data/Images/Logos/Assets/spiky-wing.png" id="2_mhhk4"]
+[ext_resource type="FontFile" uid="uid://ckjn3w2cv6ogc" path="res://Theme/Fonts/Emilio 19.ttf" id="3_mhhk4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bwr6v"]
+font = ExtResource("3_mhhk4")
+font_size = 200
+font_color = Color(0.8117647, 0.72156864, 0.4862745, 1)
+outline_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_mhhk4"]
+font = ExtResource("3_mhhk4")
+font_size = 200
+font_color = Color(0.8117647, 0.72156864, 0.4862745, 1)
+outline_size = 8
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_g7bx7")
+school_id = "BOS"
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+custom_minimum_size = Vector2(512, 512)
+
+[node name="Polygon2D" type="Polygon2D" parent="ReferenceRect"]
+visible = false
+position = Vector2(256, 256)
+color = Color(0, 0.23921569, 0.64705884, 1)
+polygon = PackedVector2Array(0, -192, 224, 0, 0, 192, -224, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ReferenceRect"]
+self_modulate = Color(0.54901963, 0.13333334, 0.19607843, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_mhhk4")
+
+[node name="Label2" type="Label" parent="ReferenceRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 69.0
+offset_top = 9.0
+offset_right = 69.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "C"
+label_settings = SubResource("LabelSettings_bwr6v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="ReferenceRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -79.0
+offset_right = 15.0
+offset_bottom = -79.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "B"
+label_settings = SubResource("LabelSettings_mhhk4")
+horizontal_alignment = 1
+vertical_alignment = 1

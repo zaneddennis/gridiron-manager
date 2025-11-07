@@ -1,0 +1,236 @@
+[gd_scene load_steps=7 format=3 uid="uid://cin4svkcycpup"]
+
+[ext_resource type="Script" uid="uid://coyejgb5u6x75" path="res://MainMenu/main_menu.gd" id="1_nhkf3"]
+[ext_resource type="Texture2D" uid="uid://c3p12wiiof1r4" path="res://Data/Data/Images/StockArt/pexels-kelly-28239821.jpg" id="2_3w4mj"]
+[ext_resource type="Script" uid="uid://dlt1kdtighesa" path="res://MainMenu/NewGame/main_menu_new_game.gd" id="3_5de1l"]
+[ext_resource type="PackedScene" uid="uid://c08jy34upx7yb" path="res://MainMenu/LoadGame/load_slot_widget.tscn" id="3_po2gx"]
+[ext_resource type="Script" uid="uid://uruj50f1oo0p" path="res://MainMenu/LoadGame/main_menu_load_game.gd" id="4_ajn5b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhkf3"]
+atlas = ExtResource("2_3w4mj")
+region = Rect2(117.458, 1957.41, 4607.4, 2995.62)
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_nhkf3")
+
+[node name="Background" type="TextureRect" parent="."]
+self_modulate = Color(0.25, 0.25, 0.25, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_nhkf3")
+expand_mode = 5
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -402.0
+offset_top = 32.0
+offset_right = 402.0
+offset_bottom = 105.0
+grow_horizontal = 2
+theme_type_variation = &"TitleLabel"
+text = "GRIDIRON MANAGER"
+
+[node name="Buttons" type="Panel" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = -290.0
+offset_right = -64.0
+offset_bottom = -162.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Continue" type="Button" parent="Buttons/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(256, 96)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_type_variation = &"MainMenuButton"
+text = "Continue"
+
+[node name="New" type="Button" parent="Buttons/HBoxContainer"]
+custom_minimum_size = Vector2(256, 96)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_type_variation = &"MainMenuButton"
+text = "New Game"
+
+[node name="Load" type="Button" parent="Buttons/HBoxContainer"]
+custom_minimum_size = Vector2(256, 96)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_type_variation = &"MainMenuButton"
+text = "Load Game"
+
+[node name="Options" type="Button" parent="Buttons/HBoxContainer"]
+custom_minimum_size = Vector2(256, 96)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_type_variation = &"MainMenuButton"
+text = "Options"
+
+[node name="Exit" type="Button" parent="Buttons/HBoxContainer"]
+custom_minimum_size = Vector2(256, 96)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_type_variation = &"MainMenuButton"
+text = "Exit to Desktop"
+
+[node name="Continue" parent="Buttons" instance=ExtResource("3_po2gx")]
+visible = false
+custom_minimum_size = Vector2(384, 160)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = 136.0
+offset_right = 192.0
+offset_bottom = 264.0
+grow_vertical = 2
+
+[node name="NewGamePanel" type="Panel" parent="."]
+visible = false
+custom_minimum_size = Vector2(1400, 720)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -330.0
+offset_right = 600.0
+offset_bottom = 390.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_5de1l")
+
+[node name="Content" type="Control" parent="NewGamePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LineEdit" type="LineEdit" parent="NewGamePanel/Content"]
+custom_minimum_size = Vector2(512, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.2813
+offset_top = -15.5
+offset_right = 34.2813
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "save_slot_name"
+clear_button_enabled = true
+
+[node name="SequenceButtons" type="HBoxContainer" parent="NewGamePanel"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Back" type="Button" parent="NewGamePanel/SequenceButtons"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "< Back"
+
+[node name="Spacer" type="Control" parent="NewGamePanel/SequenceButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Next" type="Button" parent="NewGamePanel/SequenceButtons"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "CREATE GAME"
+
+[node name="LoadGamePanel" type="Panel" parent="."]
+visible = false
+custom_minimum_size = Vector2(512, 640)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_ajn5b")
+widget_scene = ExtResource("3_po2gx")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="LoadGamePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="LoadGamePanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LoadGamePanel/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[connection signal="pressed" from="Buttons/HBoxContainer/New" to="." method="_on_new_pressed"]
+[connection signal="pressed" from="Buttons/HBoxContainer/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="Buttons/HBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="load_game" from="Buttons/Continue" to="." method="_on_load_game_panel_start_load_game"]
+[connection signal="back_to_main_menu" from="NewGamePanel" to="." method="_on_new_game_panel_back_to_main_menu"]
+[connection signal="start_new_game" from="NewGamePanel" to="." method="_on_new_game_panel_start_new_game"]
+[connection signal="pressed" from="NewGamePanel/SequenceButtons/Back" to="NewGamePanel" method="_on_back_pressed"]
+[connection signal="pressed" from="NewGamePanel/SequenceButtons/Next" to="NewGamePanel" method="_on_next_pressed"]
+[connection signal="start_load_game" from="LoadGamePanel" to="." method="_on_load_game_panel_start_load_game"]

@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://cty2u6g5v2276"]
+
+[ext_resource type="PackedScene" uid="uid://cys3ujj0lf2n5" path="res://ActiveGame/UI/Pages/Tasks/task_page.tscn" id="1_yqf7n"]
+[ext_resource type="Script" uid="uid://ia6in1a626qd" path="res://ActiveGame/UI/Pages/Tasks/Gameday/gameday_task_page.gd" id="2_ki5x8"]
+[ext_resource type="Resource" uid="uid://bc74pwsl12e21" path="res://Data/Data/Resources/Tasks/gameday_task.tres" id="2_ti42b"]
+[ext_resource type="PackedScene" uid="uid://7lckr6cdt8x1" path="res://ActiveGame/UI/Widgets/box_score_summary_widget.tscn" id="3_ki5x8"]
+
+[node name="Gameday" instance=ExtResource("1_yqf7n")]
+color = Color(0, 0, 0, 1)
+script = ExtResource("2_ki5x8")
+BoxScoreSummaryWidgetScene = ExtResource("3_ki5x8")
+task = ExtResource("2_ti42b")
+
+[node name="Panel" parent="." index="0"]
+anchors_preset = 15
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="Filters" type="Label" parent="Panel/ScrollBox/VBox" index="2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "[Filters and sorters go here]"
+
+[node name="HSeparator2" type="HSeparator" parent="Panel/ScrollBox/VBox" index="3"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="Panel/ScrollBox/VBox" index="4"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="GridBox" type="GridContainer" parent="Panel/ScrollBox/VBox" index="5"]
+layout_mode = 2
+theme_override_constants/v_separation = 32
+columns = 3
+
+[node name="Spacer2" type="Control" parent="Panel/ScrollBox/VBox" index="6"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="Complete" type="Button" parent="Panel/ScrollBox/VBox" index="7"]
+custom_minimum_size = Vector2(1200, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Complete Game Day"
+
+[node name="Spacer3" type="Control" parent="Panel/ScrollBox/VBox" index="8"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[connection signal="pressed" from="Panel/ScrollBox/VBox/Complete" to="." method="_on_complete_pressed"]
