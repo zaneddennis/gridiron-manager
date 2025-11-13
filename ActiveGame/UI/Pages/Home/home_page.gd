@@ -43,15 +43,22 @@ func Activate(ag: ActiveGame):
 func RenderNextGame(ag: ActiveGame):
 	var school_id = ag.GetUserSchool().id
 	var year = ag.current_date.year
-	var week = ag.current_date.week if ag.current_date.phase == Timestamp.PHASE.REGULAR_SEASON else 1
+	#var week = ag.current_date.week if ag.current_date.phase == Timestamp.PHASE.REGULAR_SEASON else 1
+	var week = {
+		Timestamp.PHASE.PRESEASON: 1,
+		Timestamp.PHASE.REGULAR_SEASON: ag.current_date.week,
+		Timestamp.PHASE.POSTSEASON: 999
+	}[ag.current_date.phase]
 	
-	var g: Dictionary = Database.Query("""
+	var result: Array[Dictionary] = Database.Query("""
 	SELECT *, CASE WHEN AwayConferenceID = HomeConferenceID THEN HomeConferenceID ELSE '-' END AS GameConference
 	FROM GamesFull_v
 	WHERE Year = %d AND '%s' IN (AwaySchoolID, HomeSchoolID) AND Week >= %d
 	ORDER BY Week
 	LIMIT 1
-	""" % [year, school_id, week])[0]
+	""" % [year, school_id, week])
+	
+	var g = result[0] if len(result) > 0 else {}
 	
 	$Top/NextGame.Render(g)
 

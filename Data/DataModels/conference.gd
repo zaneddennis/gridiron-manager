@@ -7,10 +7,12 @@ var name: String
 var league: String
 
 
-static func GetAll(order_by: String = ""):
+static func GetAll(order_by: String = "") -> Array[Conference]:
 	var ob = "ORDER BY %s" % order_by if order_by else ""
 	var dicts = Database.Query("SELECT * FROM Conferences %s" % ob)
-	return dicts.map(func(d: Dictionary): return Conference.FromDict(d))
+	var result: Array[Conference]
+	result.assign(dicts.map(func(d: Dictionary): return Conference.FromDict(d)))
+	return result
 
 
 static func FromDB(conference_id: String) -> Conference:
@@ -26,3 +28,7 @@ static func FromDict(d: Dictionary) -> Conference:
 	c.league = d["League"]
 	
 	return c
+
+
+func _to_string() -> String:
+	return "<Conference:%s>" % id

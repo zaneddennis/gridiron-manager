@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://dw025jfmritdg"]
+
+[ext_resource type="PackedScene" uid="uid://cys3ujj0lf2n5" path="res://ActiveGame/UI/Pages/Tasks/task_page.tscn" id="1_xiixr"]
+[ext_resource type="Resource" uid="uid://csl1k1s2y53pg" path="res://Data/Data/Resources/Tasks/conference_champions.tres" id="2_0umh1"]
+[ext_resource type="Script" uid="uid://dilflledl5lke" path="res://ActiveGame/UI/Pages/Tasks/CrownConferenceChamps/conference_champions_task.gd" id="2_w7n7y"]
+[ext_resource type="PackedScene" uid="uid://cp62cnv7bw67x" path="res://ActiveGame/UI/Pages/Tasks/CrownConferenceChamps/conference_champion_summary_widget.tscn" id="3_vo5rd"]
+
+[node name="ConferenceChampionsTask" instance=ExtResource("1_xiixr")]
+script = ExtResource("2_w7n7y")
+SummaryWidgetScene = ExtResource("3_vo5rd")
+task = ExtResource("2_0umh1")
+
+[node name="GridContainer" type="GridContainer" parent="Panel/ScrollBox/VBox" index="2"]
+layout_mode = 2
+theme_override_constants/v_separation = 32
+columns = 2
+
+[node name="Spacer" type="Control" parent="Panel/ScrollBox/VBox/GridContainer" index="0"]
+layout_mode = 2
+
+[node name="Spacer2" type="Control" parent="Panel/ScrollBox/VBox/GridContainer" index="1"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="Panel/ScrollBox/VBox" index="3"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Complete" type="Button" parent="Panel/ScrollBox/VBox" index="4"]
+custom_minimum_size = Vector2(1200, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+text = " Complete"
+
+[node name="Spacer2" type="Control" parent="Panel/ScrollBox/VBox" index="5"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[connection signal="pressed" from="Panel/ScrollBox/VBox/Complete" to="." method="_on_complete_pressed"]

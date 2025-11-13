@@ -73,10 +73,13 @@ func _on_home_open_task(i: int) -> void:
 	var task = task_list[i]
 	
 	var page = $UI/VBox/Pages/PlaceholderTask
-	if task.display_name == "GAME DAY":
+	if task == TaskScheduler.gameday:
 		page = $UI/Gameday
+	elif task == TaskScheduler.conference_champions:
+		page = $UI/VBox/Pages/ConferenceChampionsTask
 	
-	$UI.OpenPage(page)
+	#$UI.OpenPage(page)
+	page.Activate(self)
 
 
 func _on_task_completed(task_page: TaskPage) -> void:
@@ -87,7 +90,7 @@ func _on_task_completed(task_page: TaskPage) -> void:
 	SaveData()
 	
 	$UI.Refresh()
-	$UI.OpenPage($UI/VBox/Pages/Home)
+	$UI/VBox/Pages/Home.Activate(self)
 
 
 func _on_week_completed() -> void:
@@ -101,7 +104,7 @@ func _on_week_completed() -> void:
 		if current_date.phase >= len(Timestamp.PHASE.keys()):
 			current_date.year += 1
 			current_date.phase = 0
-			# NewSeason()
+			NewSeason()
 		
 		# NewPhase()
 	
@@ -110,4 +113,5 @@ func _on_week_completed() -> void:
 	NewWeek()
 	
 	$UI.Refresh()
-	$UI.OpenPage($UI/VBox/Pages/Home)
+	#$UI.OpenPage($UI/VBox/Pages/Home)
+	$UI/VBox/Pages/Home.Activate(self)

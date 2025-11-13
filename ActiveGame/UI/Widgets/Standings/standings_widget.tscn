@@ -4,10 +4,47 @@
 [ext_resource type="PackedScene" uid="uid://2maaug7lln5l" path="res://ActiveGame/UI/Widgets/Standings/standings_row.tscn" id="2_r4w88"]
 
 [node name="StandingsWidget" type="VBoxContainer"]
-custom_minimum_size = Vector2(256, 0)
+custom_minimum_size = Vector2(444, 0)
 offset_right = 256.0
 theme_override_constants/separation = 0
 script = ExtResource("1_qcrf5")
+StandingsRowScene = ExtResource("2_r4w88")
+
+[node name="Title" type="Panel" parent="."]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_type_variation = &"FlatPanel"
+
+[node name="Label" type="Label" parent="Title"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "CONFERENCE NAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Header" parent="." instance=ExtResource("2_r4w88")]
+layout_mode = 2
+
+[node name="Place" parent="Header" index="0"]
+text = ""
+
+[node name="School" parent="Header" index="1"]
+text = "School"
+
+[node name="Record" parent="Header" index="2"]
+text = "W-L"
+
+[node name="ConfRecord" parent="Header" index="3"]
+text = "Conf W-L"
+
+[node name="HSeparator" type="HSeparator" parent="."]
+custom_minimum_size = Vector2(428, 0)
+layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="StandingsRow" parent="." instance=ExtResource("2_r4w88")]
 layout_mode = 2
@@ -38,3 +75,5 @@ layout_mode = 2
 
 [node name="StandingsRow10" parent="." instance=ExtResource("2_r4w88")]
 layout_mode = 2
+
+[editable path="Header"]

@@ -43,7 +43,7 @@ static func GenerateSchedules(year: int):
 static func AttemptGenerateNonconSchedule(year: int) -> Array[Dictionary]:
 	print("\t\tAttempting to generate nonconference schedules...")
 	
-	var teams_list = Database.GetColumnAsList("Teams", "ID", "ID")
+	var teams_list = Database.GetColumnAsList("Teams", "ID", "ID", "Year = %d" % year)
 	var conferences_list = Database.GetColumnAsList("Schools", "ConferenceID", "ID")
 	
 	var counts = {}

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3bwxs24w8ayh"]
+[gd_scene load_steps=10 format=3 uid="uid://b3bwxs24w8ayh"]
 
 [ext_resource type="Script" uid="uid://bj2an1khqhk62" path="res://ActiveGame/task_scheduler.gd" id="1_tj0if"]
 [ext_resource type="Resource" uid="uid://c2rl6rvekag0u" path="res://Data/Data/Resources/Tasks/placeholder_task.tres" id="2_rmljv"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://c24yxyifjko5x" path="res://Data/Data/Resources/Tasks/gameplanning_task.tres" id="6_j3jwf"]
 [ext_resource type="Resource" uid="uid://bc74pwsl12e21" path="res://Data/Data/Resources/Tasks/gameday_task.tres" id="6_p5k0u"]
 [ext_resource type="Resource" uid="uid://c2icof0jf6ewf" path="res://Data/Data/Resources/Tasks/practice_task.tres" id="7_qnthv"]
+[ext_resource type="Resource" uid="uid://csl1k1s2y53pg" path="res://Data/Data/Resources/Tasks/conference_champions.tres" id="9_16vos"]
 
 [node name="TaskScheduler" type="Node"]
 script = ExtResource("1_tj0if")
@@ -18,3 +19,4 @@ scouting = ExtResource("5_16vos")
 gameplan = ExtResource("6_j3jwf")
 practice = ExtResource("7_qnthv")
 gameday = ExtResource("6_p5k0u")
+conference_champions = ExtResource("9_16vos")

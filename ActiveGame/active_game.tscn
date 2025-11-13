@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ch0hoy3haxxhc"]
+[gd_scene load_steps=12 format=3 uid="uid://ch0hoy3haxxhc"]
 
 [ext_resource type="Script" uid="uid://dil3t2hgmaa6b" path="res://ActiveGame/active_game.gd" id="1_loo5d"]
 [ext_resource type="PackedScene" uid="uid://cvtp0myfbmces" path="res://ActiveGame/UI/Pages/System/system_page.tscn" id="2_bd78g"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dbetr47rrvggr" path="res://ActiveGame/UI/Widgets/Schedule/schedule_widget.tscn" id="5_i6i7d"]
 [ext_resource type="PackedScene" uid="uid://bpnffjui2mw45" path="res://ActiveGame/UI/Pages/Home/standings_page.tscn" id="7_7huaj"]
 [ext_resource type="PackedScene" uid="uid://cty2u6g5v2276" path="res://ActiveGame/UI/Pages/Tasks/Gameday/gameday.tscn" id="9_c3yoy"]
+[ext_resource type="PackedScene" uid="uid://dw025jfmritdg" path="res://ActiveGame/UI/Pages/Tasks/CrownConferenceChamps/conference_champions_task.tscn" id="10_sj56o"]
 
 [node name="ActiveGame" type="Node"]
 script = ExtResource("1_loo5d")
@@ -379,6 +380,10 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
+[node name="ConferenceChampionsTask" parent="UI/VBox/Pages" instance=ExtResource("10_sj56o")]
+visible = false
+layout_mode = 1
+
 [node name="PageButtons" type="HBoxContainer" parent="UI/VBox"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
@@ -436,4 +441,5 @@ visible = false
 [connection signal="open_task" from="UI/VBox/Pages/Home" to="." method="_on_home_open_task"]
 [connection signal="pressed" from="UI/VBox/Pages/Home/TaskButtons/NextWeek" to="." method="_on_week_completed"]
 [connection signal="task_completed" from="UI/VBox/Pages/PlaceholderTask" to="." method="_on_task_completed"]
+[connection signal="task_completed" from="UI/VBox/Pages/ConferenceChampionsTask" to="." method="_on_task_completed"]
 [connection signal="task_completed" from="UI/Gameday" to="." method="_on_task_completed"]

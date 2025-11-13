@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://bpnffjui2mw45"]
+[gd_scene load_steps=4 format=3 uid="uid://bpnffjui2mw45"]
 
 [ext_resource type="PackedScene" uid="uid://4n76kexbw5gh" path="res://ActiveGame/UI/Pages/page.tscn" id="1_qxwmm"]
 [ext_resource type="Script" uid="uid://cikgbldrjilff" path="res://ActiveGame/UI/Pages/Home/standings_page.gd" id="2_t7k4p"]
+[ext_resource type="PackedScene" uid="uid://bktxohrr06epg" path="res://ActiveGame/UI/Widgets/Standings/standings_widget.tscn" id="3_4xnot"]
 
 [node name="Standings" instance=ExtResource("1_qxwmm")]
 script = ExtResource("2_t7k4p")
+StandingsWidgetScene = ExtResource("3_4xnot")
 
 [node name="Panel" parent="." index="0"]
 anchors_preset = 15
@@ -40,7 +42,7 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/v_separation = 32
-columns = 4
+columns = 3
 
 [node name="Spacer" type="Control" parent="Panel/VBoxContainer/ScrollContainer/GridContainer" index="0"]
 layout_mode = 2
@@ -50,36 +52,3 @@ layout_mode = 2
 
 [node name="Spacer2" type="Control" parent="Panel/VBoxContainer/ScrollContainer/GridContainer" index="2"]
 layout_mode = 2
-
-[node name="Spacer3" type="Control" parent="Panel/VBoxContainer/ScrollContainer/GridContainer" index="3"]
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="Panel/VBoxContainer/ScrollContainer/GridContainer" index="4"]
-custom_minimum_size = Vector2(256, 0)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 0
-
-[node name="Panel2" type="Panel" parent="Panel/VBoxContainer/ScrollContainer/GridContainer" index="5"]
-custom_minimum_size = Vector2(256, 0)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 0
-
-[node name="Panel3" type="Panel" parent="Panel/VBoxContainer/ScrollContainer/GridContainer" index="6"]
-custom_minimum_size = Vector2(256, 0)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 0
-
-[node name="Panel4" type="Panel" parent="Panel/VBoxContainer/ScrollContainer/GridContainer" index="7"]
-custom_minimum_size = Vector2(256, 0)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 0
-
-[node name="Panel5" type="Panel" parent="Panel/VBoxContainer/ScrollContainer/GridContainer" index="8"]
-custom_minimum_size = Vector2(256, 0)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 0

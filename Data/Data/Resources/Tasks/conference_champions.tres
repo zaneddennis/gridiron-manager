@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Task" load_steps=2 format=3 uid="uid://csl1k1s2y53pg"]
+
+[ext_resource type="Script" uid="uid://bos32gtlloat2" path="res://Data/DataModels/task.gd" id="1_elsl8"]
+
+[resource]
+script = ExtResource("1_elsl8")
+display_name = "Crown Conference Champions"
+metadata/_custom_type_script = "uid://bos32gtlloat2"

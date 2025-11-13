@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp62cnv7bw67x"]
+
+[ext_resource type="Script" uid="uid://doyb7fn13nrms" path="res://ActiveGame/UI/Pages/Tasks/CrownConferenceChamps/conference_champion_summary_widget.gd" id="1_b31vq"]
+[ext_resource type="Texture2D" uid="uid://cfy08ejm7xm4f" path="res://Data/Data/Images/Trophies/trophy-cup.png" id="1_sa5t5"]
+
+[node name="ConferenceChampionSummaryWidget" type="Panel"]
+custom_minimum_size = Vector2(512, 256)
+size_flags_horizontal = 6
+script = ExtResource("1_b31vq")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_right = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Panel" type="Panel" parent="HBox"]
+custom_minimum_size = Vector2(224, 224)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_type_variation = &"FlatPanel"
+
+[node name="TextureRect" type="TextureRect" parent="HBox/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_sa5t5")
+expand_mode = 1
+
+[node name="Spacer" type="Control" parent="HBox"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="HBox"]
+custom_minimum_size = Vector2(0, 224)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Conference" type="Label" parent="HBox/VBox"]
+layout_mode = 2
+text = "Conference"
+
+[node name="HSeparator" type="HSeparator" parent="HBox/VBox"]
+layout_mode = 2
+
+[node name="Team" type="Label" parent="HBox/VBox"]
+layout_mode = 2
+text = "School School School Mascots"
+
+[node name="Record" type="Label" parent="HBox/VBox"]
+layout_mode = 2
+text = "XX - XX (XX - XX)"
+
+[node name="HSeparator2" type="HSeparator" parent="HBox/VBox"]
+layout_mode = 2
