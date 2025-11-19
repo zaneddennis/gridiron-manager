@@ -37,8 +37,8 @@ func _on_select_school_widget_pressed(school: School):
 func _on_start_game_pressed() -> void:
 	var user_character = Character.FromDict({
 		"ID": Constants.USER_ID,
-		"First": "John",
-		"Last": "Smith",
+		"First": $Panel/VBoxContainer/HBox/Coach/First/LineEdit.text,
+		"Last": $Panel/VBoxContainer/HBox/Coach/Last/LineEdit.text,
 		"Birth": 1995
 	})
 	user_character.AddToDB()

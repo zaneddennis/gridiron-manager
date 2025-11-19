@@ -33,15 +33,34 @@ func Initialize():
 	var schools = load("res://Data/Data/ReferenceData/Schools.csv").records
 	database.insert_rows("Schools", schools)
 	
-	var test_query = Query("SELECT * FROM Conferences")
-	print("Test Query:")
-	print(test_query)
-	print("---")
+	var first_names = load("res://Data/Data/ReferenceData/first_names.csv").records
+	database.insert_rows("FirstNames", first_names)
+	
+	var last_names = load("res://Data/Data/ReferenceData/last_names.csv").records
+	database.insert_rows("LastNames", last_names)
+	
+	Query("SELECT * FROM Conferences")
+	#print("Test Query:")
+	#print(test_query)
+	#print("---")
 
 
 func Query(query: String) -> Array[Dictionary]:
-	database.query(query)
+	var s = database.query(query)
+	assert(s)
 	return database.query_result
+
+
+func QueryToDict(query: String) -> Dictionary[String, Dictionary]:
+	var x = Query(query)
+	var result: Dictionary[String, Dictionary] = {}
+	print(x)
+	
+	for d: Dictionary in x:
+		result[d["ID"]] = d
+	print(result)
+	
+	return result
 
 
 func GetItem(table: String, id: Variant) -> Dictionary:
@@ -49,6 +68,25 @@ func GetItem(table: String, id: Variant) -> Dictionary:
 	var result = database.query_result
 	assert(len(result) == 1)
 	return result[0]
+
+
+# NOTE: untested
+func GetValue(table: String, id: Variant, col: String) -> Variant:
+	var d = GetItem(table, id)
+	return d[col]
+
+
+func GetCount(table: String) -> int:
+	var s = database.query("SELECT COUNT(*) AS cnt FROM %s" % table)
+	assert(s)
+	return database.query_result[0]["cnt"]
+
+
+# for tables with autoincrement integer ID column
+func GetNextAIID(table: String) -> int:
+	var s = database.query("SELECT seq FROM sqlite_sequence WHERE name = '%s'" % table)
+	assert(s)
+	return database.query_result[0]["seq"] + 1
 
 
 func AddRow(table: String, data: Dictionary):
@@ -73,6 +111,13 @@ func GetColumnAsList(table: String, column: String, order_by: String, where: Str
 		database.query("SELECT %s FROM %s WHERE %s ORDER BY %s" % [column, table, where, order_by])
 	else:
 		database.query("SELECT %s FROM %s ORDER BY %s" % [column, table, order_by])
+	#var where_clause = "WHERE " + where if where else ""
+	#var ob_clause = "ORDER BY " + order_by if order_by else ""
+	#var query = "SELECT %s FROM %s %s %s" % [
+	#	column, table, where_clause, ob_clause
+	#]
+	#print(query)
+	#database.query(query)
 	var result = database.query_result
 	var ret_val = []
 	for row in result:

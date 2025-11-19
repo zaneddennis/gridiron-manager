@@ -4,4 +4,4 @@ class_name Constants
 const SAVES_LOCATION = "user://save_data"
 const DEBUG_SAVE = "new_career_2025-11-06" #"_debug"
 
-const USER_ID = 0
+const USER_ID = 0  # this will always be open because autoincrement starts at 1

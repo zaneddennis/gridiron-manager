@@ -7,6 +7,12 @@ var first: String
 var last: String
 var birth: int
 
+# Personality
+var leadership: float  # skill at garnering the respect and maintaining the belief of your locker room
+var persuasion: float  # skill at convincing someone in a persuasion scenario
+var ambition_prestige: float  # willingness to pursue offers from more prestigious programs
+var ambition_money: float  # willingness to pursue offers for more money/NIL
+
 
 static func FromDict(d: Dictionary) -> Character:
 	var c = Character.new()

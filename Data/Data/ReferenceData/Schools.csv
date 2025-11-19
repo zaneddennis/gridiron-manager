@@ -1,51 +1,51 @@
-ID,Name,Mascot,ConferenceID,LocationID,Color1,Color2,Color3
-COMA,Colorado Military Academy,Lightning,WST,,#003594,#FFFFFF,#B2B4B2
-AKR,Akron,Kangaroos,MDW,,#041E42,#FFFFFF,#A89968
-BAMA,Alabama,Elephants,SEA,,#B30838,#FFFFFF,None
-APP,Appalachia,Mountainmen,NEA,,#222222,#FFFFFF,#FFCC00
-ZONA,Arizona,Cougars,WST,,#AB0520,#FFFFFF,#0C234B
-AZT,Arizona-Tempe,Devils,WST,,#7D2248,#FFFFFF,#FFC72C
-ARK,Arkansas,Wild Hogs,SWE,,#A41F35,#FFFFFF,None
-ARJ,Arkansas-Jonesboro,Wolves,SWE,,#CC092F,#FFFFFF,#000000
-WPMA,West Point Military Academy,Knights,NEA,,#2C2A29,#FFFFFF,#D3BC8D
-AUB,Auburn,Eagles,SEA,,#03244d,#FFFFFF,#F26522
-TBU,Texas Baptist,Bears,SWE,,#154734,#FFFFFF,#FFB81C
-BOIS,Boise,Mustangs,WST,,#0033A0,#FFFFFF,#D64309
-BOS,Boston,Hawks,NEA,,#8C2232,#FFFFFF,#DBCCA6
-BUFF,Buffalo,Bells,NEA,,#005BBB,#FFFFFF,None
-UMU,Utah Mormon,Wildcats,WST,,#003DA5,#FFFFFF,None
-CAL,California,Bears,WST,,#041E42,#FFFFFF,#FFC72C
-CMU,Central Michigan,Rivermen,MDW,,#6A0032,#FFFFFF,#FFC82E
-CINC,Cincinnati,Wildcats,MDW,,#E00122,#FFFFFF,#000000
-CLEM,Clemson,Bengals,SEA,,#F56600,#FFFFFF,#522D80
-COLO,Colorado,Bison,SWE,,#000000,#FFFFFF,#CFB87C
-CFC,Colorado-Fort Collins,Mountain Goats,WST,,#1E4D2B,#FFFFFF,#C8C372
-DEL,Delaware,Hens,NEA,,#00539F,#FFFFFF,#FFD200
-EARL,Earl,Devils,NEA,,#013088,#FFFFFF,None
-CGU,Carolina-Greenville,Buccaneers,SEA,,#582C83,#FFFFFF,#FFC72C
-FLA,Florida,Alligators,SEA,,#003087,#FFFFFF,#FA4616
-FTU,Florida-Tallahassee,Chiefs,SEA,,#782F40,#FFFFFF,#CEB888
-FRES,Fresno,Hounds,WST,,#C41230,#FFFFFF,#13284C
-GEO,Georgia,Boxers,SEA,,#BA0C2F,#FFFFFF,#2C2A29
-GPT,Georgia Polytechnic,Wasps,SEA,,#B3A369,#000000,#003057
-HWI,Hawaii,Rainbows,WST,,#005838,#FFFFFF,#231F20
-HOU,Houston,Panthers,SWE,,#C92A39,#FFFFFF,#B8B9B7
-ILL,Illinois,Cadets,MDW,,#13294B,#FFFFFF,#FF5F05
-IND,Indiana,Hoopers,MDW,,#990000,#FFFFFF,#EDEBEB
-IOWA,Iowa,Hawks,MDW,,#000000,#FFFFFF,#FCD116
-IAA,Iowa-Ames,Tornadoes,MDW,,#822433,#FFFFFF,#FDCA2F
-KAN,Kansas,Hawks,SWE,,#0051BA,#FFFFFF,#E8000D
-KMU,Kansas-Manhattan,Cougars,SWE,,#330A57,#FFFFFF,#A7A9AC
-KTKY,Kentucky,Panthers,SEA,,#0033A0,#FFFFFF,#C8C9C7
-LBR,Louisiana-Baton Rouge,Bengals,SEA,,#461D7C,#FFFFFF,#FDD023
-JAY,John Jay,Green Herd,NEA,,#00B140,#FFFFFF,#27251F
-MARY,Maryland,Turtles,NEA,,#E21833,#FFFFFF,#FFD200
-MEM,Memphis,Lions,SWE,,#004991,#FFFFFF,#8E908F
-MIA,Miami,Ibises,NEA,,#005030,#FFFFFF,#F05A00
-MICH,Michigan,Wolves,MDW,,#00274C,#FFFFFF,#FFCB05
-MIEL,Michigan-East Lansing,Trojans,MDW,,#173F35,#FFFFFF,None
-MINN,Minnesota,Gophers,MDW,,#5B0013,#FFFFFF,#FFB71E
-MIZZ,Missouri,Lions,SWE,,#000000,#FFFFFF,#FDB719
-MMA,Maryland Military Academy,Sailors,NEA,,#00225B,#FFFFFF,#B5A67C
-NEB,Nebraska,Shuckers,SWE,,#D00000,#FFFFFF,#F5F1E7
-NEV,Nevada,Wolves,WST,,#041E42,#FFFFFF,#74767B
+ID,Name,Mascot,ConferenceID,LocationID,Color1,Color2,Color3,Prestige
+COMA,Colorado Military Academy,Lightning,WST,,#003594,#FFFFFF,#B2B4B2,2
+AKR,Akron,Kangaroos,MDW,,#041E42,#FFFFFF,#A89968,0
+BAMA,Alabama,Elephants,SEA,,#B30838,#FFFFFF,None,5
+APP,Appalachia,Mountainmen,NEA,,#222222,#FFFFFF,#FFCC00,2
+ZONA,Arizona,Cougars,WST,,#AB0520,#FFFFFF,#0C234B,3
+AZT,Arizona-Tempe,Devils,WST,,#7D2248,#FFFFFF,#FFC72C,3
+ARK,Arkansas,Wild Hogs,SWE,,#A41F35,#FFFFFF,None,3
+ARJ,Arkansas-Jonesboro,Wolves,SWE,,#CC092F,#FFFFFF,#000000,1
+WPMA,West Point Military Academy,Knights,NEA,,#2C2A29,#FFFFFF,#D3BC8D,2
+AUB,Auburn,Eagles,SEA,,#03244d,#FFFFFF,#F26522,4
+TBU,Texas Baptist,Bears,SWE,,#154734,#FFFFFF,#FFB81C,3
+BOIS,Boise,Mustangs,WST,,#0033A0,#FFFFFF,#D64309,3
+BOS,Boston,Hawks,NEA,,#8C2232,#FFFFFF,#DBCCA6,2
+BUFF,Buffalo,Bells,NEA,,#005BBB,#FFFFFF,None,1
+UMU,Utah Mormon,Wildcats,WST,,#003DA5,#FFFFFF,None,3
+CAL,California,Bears,WST,,#041E42,#FFFFFF,#FFC72C,2
+CMU,Central Michigan,Rivermen,MDW,,#6A0032,#FFFFFF,#FFC82E,1
+CINC,Cincinnati,Wildcats,MDW,,#E00122,#FFFFFF,#000000,3
+CLEM,Clemson,Bengals,SEA,,#F56600,#FFFFFF,#522D80,4
+COLO,Colorado,Bison,SWE,,#000000,#FFFFFF,#CFB87C,3
+CFC,Colorado-Fort Collins,Mountain Goats,WST,,#1E4D2B,#FFFFFF,#C8C372,2
+DEL,Delaware,Hens,NEA,,#00539F,#FFFFFF,#FFD200,0
+EARL,Earl,Devils,NEA,,#013088,#FFFFFF,None,3
+CGU,Carolina-Greenville,Buccaneers,SEA,,#582C83,#FFFFFF,#FFC72C,1
+FLA,Florida,Alligators,SEA,,#003087,#FFFFFF,#FA4616,4
+FTU,Florida-Tallahassee,Chiefs,SEA,,#782F40,#FFFFFF,#CEB888,3
+FRES,Fresno,Hounds,WST,,#C41230,#FFFFFF,#13284C,2
+GEO,Georgia,Boxers,SEA,,#BA0C2F,#FFFFFF,#2C2A29,5
+GPT,Georgia Polytechnic,Wasps,SEA,,#B3A369,#000000,#003057,3
+HWI,Hawaii,Rainbows,WST,,#005838,#FFFFFF,#231F20,2
+HOU,Houston,Panthers,SWE,,#C92A39,#FFFFFF,#B8B9B7,3
+ILL,Illinois,Cadets,MDW,,#13294B,#FFFFFF,#FF5F05,3
+IND,Indiana,Hoopers,MDW,,#990000,#FFFFFF,#EDEBEB,3
+IOWA,Iowa,Hawks,MDW,,#000000,#FFFFFF,#FCD116,3
+IAA,Iowa-Ames,Tornadoes,MDW,,#822433,#FFFFFF,#FDCA2F,3
+KAN,Kansas,Hawks,SWE,,#0051BA,#FFFFFF,#E8000D,3
+KMU,Kansas-Manhattan,Cougars,SWE,,#330A57,#FFFFFF,#A7A9AC,3
+KTKY,Kentucky,Panthers,SEA,,#0033A0,#FFFFFF,#C8C9C7,3
+LBR,Louisiana-Baton Rouge,Bengals,SEA,,#461D7C,#FFFFFF,#FDD023,4
+JAY,John Jay,Green Herd,NEA,,#00B140,#FFFFFF,#27251F,1
+MARY,Maryland,Turtles,NEA,,#E21833,#FFFFFF,#FFD200,3
+MEM,Memphis,Lions,SWE,,#004991,#FFFFFF,#8E908F,2
+MIA,Miami,Ibises,NEA,,#005030,#FFFFFF,#F05A00,4
+MICH,Michigan,Wolves,MDW,,#00274C,#FFFFFF,#FFCB05,4
+MIEL,Michigan-East Lansing,Trojans,MDW,,#173F35,#FFFFFF,None,3
+MINN,Minnesota,Gophers,MDW,,#5B0013,#FFFFFF,#FFB71E,3
+MIZZ,Missouri,Lions,SWE,,#000000,#FFFFFF,#FDB719,3
+MMA,Maryland Military Academy,Sailors,NEA,,#00225B,#FFFFFF,#B5A67C,2
+NEB,Nebraska,Shuckers,SWE,,#D00000,#FFFFFF,#F5F1E7,4
+NEV,Nevada,Wolves,WST,,#041E42,#FFFFFF,#74767B,2
