@@ -45,6 +45,17 @@ func Initialize():
 	#print("---")
 
 
+func InitializeDebug():
+	var conferences = load("res://Data/Data/Debug/Conferences.csv").records
+	database.insert_rows("Conferences", conferences)
+	
+	var schools = load("res://Data/Data/Debug/Schools.csv").records
+	database.insert_rows("Schools", schools)
+	
+	var teams = load("res://Data/Data/Debug/Teams.csv").records
+	database.insert_rows("Teams", teams)
+
+
 func Query(query: String) -> Array[Dictionary]:
 	var s = database.query(query)
 	assert(s)

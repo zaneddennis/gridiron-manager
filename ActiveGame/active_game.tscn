@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ch0hoy3haxxhc"]
+[gd_scene load_steps=13 format=3 uid="uid://ch0hoy3haxxhc"]
 
 [ext_resource type="Script" uid="uid://dil3t2hgmaa6b" path="res://ActiveGame/active_game.gd" id="1_loo5d"]
 [ext_resource type="PackedScene" uid="uid://cvtp0myfbmces" path="res://ActiveGame/UI/Pages/System/system_page.tscn" id="2_bd78g"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://buw6gkuexrfjx" path="res://ActiveGame/UI/Pages/Tasks/placeholder_task.tscn" id="5_g0xq8"]
 [ext_resource type="PackedScene" uid="uid://dbetr47rrvggr" path="res://ActiveGame/UI/Widgets/Schedule/schedule_widget.tscn" id="5_i6i7d"]
 [ext_resource type="PackedScene" uid="uid://bpnffjui2mw45" path="res://ActiveGame/UI/Pages/Home/standings_page.tscn" id="7_7huaj"]
+[ext_resource type="PackedScene" uid="uid://82ywl54lm6mb" path="res://ActiveGame/UI/Pages/Home/Strategy/strategy_page.tscn" id="8_c3exi"]
 [ext_resource type="PackedScene" uid="uid://cty2u6g5v2276" path="res://ActiveGame/UI/Pages/Tasks/Gameday/gameday.tscn" id="9_c3yoy"]
 [ext_resource type="PackedScene" uid="uid://dw025jfmritdg" path="res://ActiveGame/UI/Pages/Tasks/CrownConferenceChamps/conference_champions_task.tscn" id="10_sj56o"]
 
@@ -372,6 +373,10 @@ theme_type_variation = &"FlatPanel"
 visible = false
 layout_mode = 1
 
+[node name="Strategy" parent="UI/VBox/Pages" instance=ExtResource("8_c3exi")]
+visible = false
+layout_mode = 1
+
 [node name="System" parent="UI/VBox/Pages" instance=ExtResource("2_bd78g")]
 visible = false
 layout_mode = 1
@@ -415,7 +420,6 @@ text = "Statistics"
 [node name="Strategy" type="Button" parent="UI/VBox/PageButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
-disabled = true
 text = "Strategy"
 
 [node name="MySchool" type="Button" parent="UI/VBox/PageButtons"]

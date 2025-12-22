@@ -1,0 +1,5 @@
+ID,Name,Mascot,ConferenceID,LocationID,Color1,Color2,Color3,Prestige
+BAMA,Alabama,Crimson Tide,SEA,,#B30838,#FFFFFF,None,5
+AUB,Auburn,Tigers,SEA,,#03244d,#FFFFFF,#F26522,4
+BAY,Baylor,Bears,SWE,,#154734,#FFFFFF,#FFB81C,3
+COLO,Colorado,Buffaloes,SWE,,#000000,#FFFFFF,#CFB87C,3

@@ -51,3 +51,7 @@ func UpdateDB():
 		id,
 		ToDict()
 	)
+
+
+func _to_string() -> String:
+	return "<Game:%d>" % id

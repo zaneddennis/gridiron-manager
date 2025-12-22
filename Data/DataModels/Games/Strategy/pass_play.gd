@@ -1,0 +1,2 @@
+extends OffensePlay
+class_name PassPlay
