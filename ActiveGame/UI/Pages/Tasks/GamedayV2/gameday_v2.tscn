@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://biuhtdm7yfdq0"]
+[gd_scene load_steps=12 format=3 uid="uid://biuhtdm7yfdq0"]
 
 [ext_resource type="Script" uid="uid://c2oxngw7ywqxw" path="res://ActiveGame/UI/Pages/Tasks/GamedayV2/gameday_v_2.gd" id="1_u8isd"]
 [ext_resource type="Script" uid="uid://c4vfqejgvlxd0" path="res://ActiveGame/UI/Pages/Tasks/GamedayV2/field.gd" id="2_ej0k2"]
@@ -8,8 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://cwv824emf0urk" path="res://Data/Data/Images/Gameday/test_ball_0.png" id="4_20mdp"]
 [ext_resource type="Texture2D" uid="uid://b5aqqx1c5xg8o" path="res://Data/Data/Images/Logos/Final/DEFAULT.png" id="4_u8isd"]
 [ext_resource type="FontFile" uid="uid://ckjn3w2cv6ogc" path="res://Theme/Fonts/Emilio 19.ttf" id="5_a8enh"]
-[ext_resource type="Script" uid="uid://dxtq5evjsmiyc" path="res://ActiveGame/UI/Pages/Tasks/GamedayV2/Widgets/offense_personnel_widget.gd" id="9_b8yfe"]
-[ext_resource type="Script" uid="uid://cdh04n4uhjbr8" path="res://ActiveGame/UI/Pages/Tasks/GamedayV2/Widgets/call_play.gd" id="9_s3n22"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3xaay"]
 atlas = ExtResource("3_3xaay")
@@ -314,47 +312,4 @@ text = "1st & 10"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CallPlay" type="Control" parent="UI"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("9_s3n22")
-
-[node name="Panel" type="Panel" parent="UI/CallPlay"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -512.0
-offset_top = 128.0
-offset_right = 512.0
-offset_bottom = 384.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="OffensePersonnel" type="HBoxContainer" parent="UI/CallPlay/Panel"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("9_b8yfe")
-
-[node name="DefensePersonnel" type="HBoxContainer" parent="UI/CallPlay/Panel"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [connection signal="pressed" from="UI/Preview/Center/Start/Button" to="." method="_on_start_game_pressed"]
-[connection signal="personnel_selected" from="UI/CallPlay/Panel/OffensePersonnel" to="UI/CallPlay" method="_on_offense_personnel_selected"]

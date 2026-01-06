@@ -6,7 +6,7 @@ func Clear():
 	$Background.hide()
 	$Preview.hide()
 	$Scoreboard.hide()
-	$CallPlay.hide()
+	#$CallPlay.hide()
 
 
 func ShowPreview(g: Game):

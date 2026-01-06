@@ -21,3 +21,21 @@ static func FromDB(team_id: String) -> Team:
 	return FromDict(
 		Database.GetItem("Teams", team_id)
 	)
+
+
+func GetRoster() -> Array[Player]:
+	var players = Database.Query("""
+		SELECT *
+		FROM Players
+		WHERE SchoolID = '%s'
+	""" % school.id)
+	
+	var roster: Array[Player] = []
+	for d: Dictionary in players:
+		roster.append(Player.FromDict(d))
+	
+	return roster
+
+
+func GetDepthChart() -> DepthChart:
+	return DepthChart.FromDB(id)

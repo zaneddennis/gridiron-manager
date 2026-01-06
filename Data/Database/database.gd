@@ -26,6 +26,7 @@ func Open(s: String = ""):
 
 
 # fill db with data
+# TODO: loopify these functions
 func Initialize():
 	var conferences = load("res://Data/Data/ReferenceData/Conferences.csv").records
 	database.insert_rows("Conferences", conferences)
@@ -54,6 +55,15 @@ func InitializeDebug():
 	
 	var teams = load("res://Data/Data/Debug/Teams.csv").records
 	database.insert_rows("Teams", teams)
+	
+	var players = load("res://Data/Data/Debug/Players.csv").records
+	database.insert_rows("Players", players)
+	
+	var characters = load("res://Data/Data/Debug/Characters.csv").records
+	database.insert_rows("Characters", characters)
+	
+	var depth_charts = load("res://Data/Data/Debug/DepthCharts.csv").records
+	database.insert_rows("DepthCharts", depth_charts)
 
 
 func Query(query: String) -> Array[Dictionary]:

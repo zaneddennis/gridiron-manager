@@ -1,5 +1,6 @@
-extends RefCounted
+extends Formation
 class_name OffenseFormation
 
 
-var personnel: OffensePersonnel
+func _to_string() -> String:
+	return "<OffenseFormation:%s>" % name

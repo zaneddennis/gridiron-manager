@@ -30,12 +30,13 @@ func GetSaves() -> Array[Dictionary]:
 	
 	var result = [] as Array[Dictionary]
 	for slot: String in saves_dir.get_directories():
-		var filepath = "%s/%s/game_status.json" % [Constants.SAVES_LOCATION, slot]
-		var save_data = JSON.parse_string(
-			FileAccess.open(filepath, FileAccess.READ).get_as_text()
-		)
+		if slot != "_debug":
+			var filepath = "%s/%s/game_status.json" % [Constants.SAVES_LOCATION, slot]
+			var save_data = JSON.parse_string(
+				FileAccess.open(filepath, FileAccess.READ).get_as_text()
+			)
 		
-		result.append(save_data)
+			result.append(save_data)
 	
 	result.sort_custom(func(a, b): return a["last_played"] > b["last_played"])
 	return result

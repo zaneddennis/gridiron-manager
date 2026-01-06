@@ -1,12 +1,5 @@
-extends RefCounted
+extends Play
 class_name DefensePlay
-
-
-var name: String
-
-
-func _init(n: String) -> void:
-	name = n
 
 
 func _to_string() -> String:

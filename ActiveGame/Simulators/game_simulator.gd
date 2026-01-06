@@ -5,13 +5,15 @@ class_name GameSimulator
 var default_strategy: Strategy
 
 
-var verbose: bool = false
+var verbose: bool
 
 
 enum SIDE{AWAY, HOME}
 
 var game: Game
 var teams: Array[Team]
+#var rosters: Dictionary[SIDE, Array]  # Array[Player]
+var depth_charts: Dictionary[SIDE, DepthChart]
 
 var quarter: int = 1
 var clock: int = 15 * 60  # seconds remaining in quarter
@@ -20,14 +22,24 @@ var down: int = 1
 var to_go: int = 10
 var offense: SIDE
 
+var players_on_field: Dictionary[SIDE, Array]  # Array[Player]
+
 var away_score: int = 0
 var home_score: int = 0
 var coin: SIDE
 
 
-func _init(g: Game, v: bool) -> void:
+func _init(g: Game, v: bool = false) -> void:
 	game = g
 	teams = [g.away_team, g.home_team]
+	#rosters = {
+	#	SIDE.AWAY: g.away_team.GetRoster(),
+	#	SIDE.HOME: g.home_team.GetRoster()
+	#}
+	depth_charts = {
+		SIDE.AWAY: g.away_team.GetDepthChart(),
+		SIDE.HOME: g.home_team.GetDepthChart()
+	}
 	
 	verbose = v
 	
@@ -75,6 +87,8 @@ func Simulate():
 		var off_play = p[0]
 		var def_play = p[1]
 		
+		# substitutions
+		
 		var result = _simulate_play(off_play, def_play)
 		_printv("\t\tPlay Result: %d yards" % result.yards)
 		ball_on += result.yards
@@ -97,6 +111,8 @@ func Simulate():
 			else:
 				down += 1
 				to_go -= result.yards
+		
+		break
 
 
 func _call_plays():
@@ -113,8 +129,14 @@ func _call_plays():
 	return [play, def_play]
 
 
-func _simulate_play(_play: OffensePlay, _def_play: DefensePlay) -> PlayResult:
-	pass
+# set which players are on the field based on the playcall
+func _do_substitutions(s: SIDE):
+	players_on_field[s] = []
+
+
+func _simulate_play(play: OffensePlay, def_play: DefensePlay) -> PlayResult:
+	var ps = PlaySimulator.new(self, play, def_play)
+	ps.SimulatePlay()
 	
 	var result = PlayResult.new(
 		randi_range(-3, 12),  # yards gained

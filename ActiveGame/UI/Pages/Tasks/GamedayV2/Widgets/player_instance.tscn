@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1jcfxijk1wm1"]
+
+[ext_resource type="Texture2D" uid="uid://dll3o8qovqox" path="res://ActiveGame/UI/Pages/Tasks/GamedayV2/Widgets/square.png" id="1_mw7kb"]
+[ext_resource type="Texture2D" uid="uid://d1vuk0sq4i4hv" path="res://ActiveGame/UI/Pages/Tasks/GamedayV2/Widgets/outline.png" id="2_hxhue"]
+
+[node name="PlayerInstance" type="Sprite2D"]
+self_modulate = Color(0, 0, 0, 1)
+texture = ExtResource("1_mw7kb")
+
+[node name="Outline" type="Sprite2D" parent="."]
+texture = ExtResource("2_hxhue")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "X"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,16 +1,14 @@
-extends RefCounted
+extends Play
 class_name OffensePlay
 
 
-#var formation: OffenseFormation
-var name: String
-
-# outcome factors
-# ???
+enum TYPE{RUN, PASS}
+var type: TYPE
 
 
-func _init(n: String) -> void:
-	name = n
+func _init(n: String, f: Formation, a: Array[ASSIGNMENT], t: TYPE) -> void:
+	super(n, f, a)
+	type = t
 
 
 func _to_string() -> String:
