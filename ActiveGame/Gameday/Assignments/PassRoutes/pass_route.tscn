@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://csxt0igt7mg5k"]
+
+[node name="PassRoute" type="Line2D" unique_id=339556473]
+points = PackedVector2Array(0, 0)
+width = 4.0

@@ -2,70 +2,84 @@ extends RefCounted
 class_name PlaySimulator
 
 
-const TICK_LENGTH = 0.5
-var time: float = 0.0
-
 var off_players: Array[SimulationPlayer]
 var def_players: Array[SimulationPlayer]
 
 
-func _init(gs: GameSimulator, off_play: OffensePlay, def_play: DefensePlay) -> void:
-	off_players = off_play.GetLineup(gs.depth_charts[gs.offense])
-	def_players = def_play.GetLineup(gs.depth_charts[int(!bool(int(gs.offense)))])
+static func SimulatePlay(gs: GameSimulator, off_play: OffensePlay, def_play: DefensePlay) -> PlayResult:
+	var ps = PlaySimulator.new(
+		gs,
+		off_play.GetLineup(gs.depth_charts[gs.offense]),
+		def_play.GetLineup(gs.depth_charts[int(!gs.offense)])
+	)
 	
-	for i in range(len(off_players)):
-		var sp = off_players[i]
-		var a = off_play.assignments[i]
-		sp.assignment = a
-		
-		sp = def_players[i]
-		a = def_play.assignments[i]
-		sp.assignment = a
+	var desc = "Offense Play: %s\nDefense Play: %s\n" % [
+		off_play.name, def_play.name
+	]
 	
-	time = 0.0
+	if off_play is RunPlay:
+		return ps.SimulateRun(off_play, def_play, desc)
+	else:  # TODO: elif PassPlay
+		return ps.SimulatePass(off_play, def_play, desc)
 
 
-func SimulatePlay() -> Array[TickResult]:
-	print("\t\tSimulating Play")
-	
-	# lineups
-		# who is on the field and where are they?
-	print("\t\tLineups:")
-	print("\t\t\t", off_players)
-	print("\t\t\t", def_players)
-	
-	# assignments
-	print("\t\tAssignments:")
-	print("\t\t\t", off_players.map(func(sp: SimulationPlayer): return Play.ASSIGNMENT.keys()[sp.assignment]))
-	print("\t\t\t", def_players.map(func(sp: SimulationPlayer): return Play.ASSIGNMENT.keys()[sp.assignment]))
-	
-	# ticks
-	var ticks: Array[TickResult] = []
-	while true:
-		print("\t\tTICK %.2f" % time)
-		ticks.append(Tick())
-		
-		time += TICK_LENGTH
-		
-		if time >= 2.0:
-			break
-	
-	#return [TickResult.new(time), TickResult.new(time), TickResult.new(time)]
-	return ticks
+func _init(gs: GameSimulator, op: Array[SimulationPlayer], dp: Array[SimulationPlayer]) -> void:
+	off_players = op
+	def_players = dp
 
 
-func Tick() -> TickResult:
-		
-	# decide actions
-	for sp: SimulationPlayer in off_players:
-		sp.DecideAction()
+func SimulateRun(off_play: RunPlay, def_play: DefensePlay, desc: String) -> PlayResult:
+	# gap blocking
+	_sim_run_block(
+		off_play.gap,
+		{},  # blocking players: proximity  TODO: HERE
+		{}  # defending players: proximity
+	)
 	
-	# execute actions
-	for sp: SimulationPlayer in off_players:
-		print("\t\t\t\t%s %s%s" % [sp, sp.action, " *" if sp.has_ball else ""])
-		if sp.action != sp.DEFAULT_ACTION:
-			sp.call("_" + sp.action)
+	# runner in gap
 	
-	# resolve contests
+	# runner next level
 	
-	return TickResult.new(time)
+	# runner open field
+	
+	var yards = randi_range(0, 8)
+	
+	return PlayResult.new(
+		off_play,
+		def_play,
+		yards,
+		randi_range(5, 10),  # seconds elasped during play
+		desc + "[RB] rushes for %d yards. Tackled by [defender]" % yards
+	)
+
+func SimulatePass(off_play: OffensePlay, def_play: DefensePlay, desc: String) -> PlayResult:
+	var yards = 0
+	if randf() < 0.05:
+		yards = randi_range(-6, -2)  # sack
+		desc += "[QB] sacked for %d yards." % yards
+	elif randf() < 0.6:  # complete pass
+		yards = randi_range(4, 20)
+		desc += "[QB] passes to [target]. Complete for %d yards." % yards
+	else:
+		desc += "[QB] passes to [target]. Incomplete."
+	
+	return PlayResult.new(
+		off_play,
+		def_play,
+		yards,  # yards gained
+		randi_range(5, 10),  # seconds elasped during play
+		desc
+	)
+
+
+func _sim_run_block(
+	gap: LineupInstruction.GAP,
+	blocking_players: Dictionary,  # all blocking offensive players and their proximity to the gap
+	defending_players: Dictionary  # all defenders and their proximity to the gap
+):
+	var blocking: Array[float] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]  # dice roll of each blocker
+	var defending: Array[float] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]  # dice roll of each defender
+	
+	return []  # list of defense danger to ballcarrier (proximity + openness)
+
+# TODO: _sim_run_block_zone

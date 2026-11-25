@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ch0hoy3haxxhc"]
+[gd_scene format=3 uid="uid://ch0hoy3haxxhc"]
 
 [ext_resource type="Script" uid="uid://dil3t2hgmaa6b" path="res://ActiveGame/active_game.gd" id="1_loo5d"]
 [ext_resource type="PackedScene" uid="uid://cvtp0myfbmces" path="res://ActiveGame/UI/Pages/System/system_page.tscn" id="2_bd78g"]
@@ -13,14 +13,14 @@
 [ext_resource type="PackedScene" uid="uid://cty2u6g5v2276" path="res://ActiveGame/UI/Pages/Tasks/Gameday/gameday.tscn" id="9_c3yoy"]
 [ext_resource type="PackedScene" uid="uid://dw025jfmritdg" path="res://ActiveGame/UI/Pages/Tasks/CrownConferenceChamps/conference_champions_task.tscn" id="10_sj56o"]
 
-[node name="ActiveGame" type="Node"]
+[node name="ActiveGame" type="Node" unique_id=41388646]
 script = ExtResource("1_loo5d")
 
-[node name="UI" type="CanvasLayer" parent="." node_paths=PackedStringArray("ag")]
+[node name="UI" type="CanvasLayer" parent="." unique_id=748748377 node_paths=PackedStringArray("ag")]
 script = ExtResource("2_t2vb5")
 ag = NodePath("..")
 
-[node name="Background" type="ColorRect" parent="UI"]
+[node name="Background" type="ColorRect" parent="UI" unique_id=165971706]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -28,18 +28,18 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="VBox" type="VBoxContainer" parent="UI"]
+[node name="VBox" type="VBoxContainer" parent="UI" unique_id=982372538]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TopBar" type="Panel" parent="UI/VBox"]
+[node name="TopBar" type="Panel" parent="UI/VBox" unique_id=1758863780]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
-[node name="Timestamp" type="Label" parent="UI/VBox/TopBar"]
+[node name="Timestamp" type="Label" parent="UI/VBox/TopBar" unique_id=2077184080]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -56,7 +56,7 @@ text = "Phase Phase - Week XX"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="System" type="Button" parent="UI/VBox/TopBar"]
+[node name="System" type="Button" parent="UI/VBox/TopBar" unique_id=605809494]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 1
 anchors_preset = 11
@@ -68,11 +68,11 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "MENU"
 
-[node name="Pages" type="Control" parent="UI/VBox"]
+[node name="Pages" type="Control" parent="UI/VBox" unique_id=1074866080]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Home" type="VBoxContainer" parent="UI/VBox/Pages"]
+[node name="Home" type="VBoxContainer" parent="UI/VBox/Pages" unique_id=211978340]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -86,72 +86,72 @@ grow_vertical = 2
 alignment = 1
 script = ExtResource("3_pnd58")
 
-[node name="TaskButtons" type="HBoxContainer" parent="UI/VBox/Pages/Home"]
+[node name="TaskButtons" type="HBoxContainer" parent="UI/VBox/Pages/Home" unique_id=814949217]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 alignment = 1
 
-[node name="Spacer" type="Control" parent="UI/VBox/Pages/Home/TaskButtons"]
+[node name="Spacer" type="Control" parent="UI/VBox/Pages/Home/TaskButtons" unique_id=1202287474]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 
-[node name="Button0" type="Button" parent="UI/VBox/Pages/Home/TaskButtons"]
+[node name="Button0" type="Button" parent="UI/VBox/Pages/Home/TaskButtons" unique_id=2025320045]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 text = "Task"
 
-[node name="Button1" type="Button" parent="UI/VBox/Pages/Home/TaskButtons"]
+[node name="Button1" type="Button" parent="UI/VBox/Pages/Home/TaskButtons" unique_id=1139432060]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 text = "Task"
 
-[node name="Button2" type="Button" parent="UI/VBox/Pages/Home/TaskButtons"]
+[node name="Button2" type="Button" parent="UI/VBox/Pages/Home/TaskButtons" unique_id=1803125220]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 text = "Task"
 
-[node name="Button3" type="Button" parent="UI/VBox/Pages/Home/TaskButtons"]
+[node name="Button3" type="Button" parent="UI/VBox/Pages/Home/TaskButtons" unique_id=430888974]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 text = "Task"
 
-[node name="Button4" type="Button" parent="UI/VBox/Pages/Home/TaskButtons"]
+[node name="Button4" type="Button" parent="UI/VBox/Pages/Home/TaskButtons" unique_id=902630340]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 text = "Task"
 
-[node name="Button5" type="Button" parent="UI/VBox/Pages/Home/TaskButtons"]
+[node name="Button5" type="Button" parent="UI/VBox/Pages/Home/TaskButtons" unique_id=1653611481]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 text = "Task"
 
-[node name="Button6" type="Button" parent="UI/VBox/Pages/Home/TaskButtons"]
+[node name="Button6" type="Button" parent="UI/VBox/Pages/Home/TaskButtons" unique_id=2066035933]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 text = "Task"
 
-[node name="Button7" type="Button" parent="UI/VBox/Pages/Home/TaskButtons"]
+[node name="Button7" type="Button" parent="UI/VBox/Pages/Home/TaskButtons" unique_id=1022555837]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 text = "Task"
 
-[node name="NextWeek" type="Button" parent="UI/VBox/Pages/Home/TaskButtons"]
+[node name="NextWeek" type="Button" parent="UI/VBox/Pages/Home/TaskButtons" unique_id=2083897032]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -159,69 +159,69 @@ size_flags_vertical = 4
 disabled = true
 text = "To Next Week >"
 
-[node name="Spacer2" type="Control" parent="UI/VBox/Pages/Home/TaskButtons"]
+[node name="Spacer2" type="Control" parent="UI/VBox/Pages/Home/TaskButtons" unique_id=6242587]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 
-[node name="Top" type="HBoxContainer" parent="UI/VBox/Pages/Home"]
+[node name="Top" type="HBoxContainer" parent="UI/VBox/Pages/Home" unique_id=1933422579]
 custom_minimum_size = Vector2(0, 320)
 layout_mode = 2
 alignment = 1
 
-[node name="Expectations" type="VBoxContainer" parent="UI/VBox/Pages/Home/Top"]
+[node name="Expectations" type="VBoxContainer" parent="UI/VBox/Pages/Home/Top" unique_id=936733699]
 custom_minimum_size = Vector2(256, 288)
 layout_mode = 2
 size_flags_horizontal = 6
 theme_type_variation = &"FlatPanel"
 
-[node name="Label" type="Label" parent="UI/VBox/Pages/Home/Top/Expectations"]
+[node name="Label" type="Label" parent="UI/VBox/Pages/Home/Top/Expectations" unique_id=1650235106]
 layout_mode = 2
 text = "Season Expectations"
 vertical_alignment = 1
 
-[node name="Panel" type="Panel" parent="UI/VBox/Pages/Home/Top/Expectations"]
+[node name="Panel" type="Panel" parent="UI/VBox/Pages/Home/Top/Expectations" unique_id=1884951876]
 layout_mode = 2
 size_flags_vertical = 3
 theme_type_variation = &"FlatPanel"
 
-[node name="VSeparator" type="VSeparator" parent="UI/VBox/Pages/Home/Top"]
+[node name="VSeparator" type="VSeparator" parent="UI/VBox/Pages/Home/Top" unique_id=359863369]
 layout_mode = 2
 
-[node name="NextGame" type="VBoxContainer" parent="UI/VBox/Pages/Home/Top"]
+[node name="NextGame" type="VBoxContainer" parent="UI/VBox/Pages/Home/Top" unique_id=1305411034]
 custom_minimum_size = Vector2(762, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("4_cox2x")
 
-[node name="Label" type="Label" parent="UI/VBox/Pages/Home/Top/NextGame"]
+[node name="Label" type="Label" parent="UI/VBox/Pages/Home/Top/NextGame" unique_id=1601773]
 layout_mode = 2
 text = "Next Game"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Conference" type="Label" parent="UI/VBox/Pages/Home/Top/NextGame"]
+[node name="Conference" type="Label" parent="UI/VBox/Pages/Home/Top/NextGame" unique_id=284415434]
 layout_mode = 2
 text = "[Non-Conference]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBox" type="HBoxContainer" parent="UI/VBox/Pages/Home/Top/NextGame"]
+[node name="HBox" type="HBoxContainer" parent="UI/VBox/Pages/Home/Top/NextGame" unique_id=1958431032]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Away" type="VBoxContainer" parent="UI/VBox/Pages/Home/Top/NextGame/HBox"]
+[node name="Away" type="VBoxContainer" parent="UI/VBox/Pages/Home/Top/NextGame/HBox" unique_id=187589774]
 layout_mode = 2
 size_flags_horizontal = 6
 alignment = 1
 
-[node name="Panel" type="Panel" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Away"]
+[node name="Panel" type="Panel" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Away" unique_id=726749749]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_type_variation = &"FlatPanel"
 
-[node name="Logo" type="TextureRect" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Away/Panel"]
+[node name="Logo" type="TextureRect" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Away/Panel" unique_id=1308597655]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -231,44 +231,44 @@ grow_vertical = 2
 texture = ExtResource("4_18g3j")
 expand_mode = 1
 
-[node name="School" type="Label" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Away"]
+[node name="School" type="Label" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Away" unique_id=1188857946]
 layout_mode = 2
 text = "School School School"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Mascot" type="Label" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Away"]
+[node name="Mascot" type="Label" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Away" unique_id=655278090]
 layout_mode = 2
 text = "Mascot"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Record" type="Label" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Away"]
+[node name="Record" type="Label" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Away" unique_id=841484204]
 layout_mode = 2
 text = "0 - 0 (0 - 0 CONF)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VsAt" type="Label" parent="UI/VBox/Pages/Home/Top/NextGame/HBox"]
+[node name="VsAt" type="Label" parent="UI/VBox/Pages/Home/Top/NextGame/HBox" unique_id=2128198385]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "@"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Home" type="VBoxContainer" parent="UI/VBox/Pages/Home/Top/NextGame/HBox"]
+[node name="Home" type="VBoxContainer" parent="UI/VBox/Pages/Home/Top/NextGame/HBox" unique_id=849614866]
 layout_mode = 2
 size_flags_horizontal = 6
 alignment = 1
 
-[node name="Panel" type="Panel" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Home"]
+[node name="Panel" type="Panel" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Home" unique_id=192130502]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_type_variation = &"FlatPanel"
 
-[node name="Logo" type="TextureRect" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Home/Panel"]
+[node name="Logo" type="TextureRect" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Home/Panel" unique_id=159150110]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -278,44 +278,44 @@ grow_vertical = 2
 texture = ExtResource("4_18g3j")
 expand_mode = 1
 
-[node name="School" type="Label" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Home"]
+[node name="School" type="Label" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Home" unique_id=1637339931]
 layout_mode = 2
 text = "School School School"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Mascot" type="Label" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Home"]
+[node name="Mascot" type="Label" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Home" unique_id=739513840]
 layout_mode = 2
 text = "Mascot"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Record" type="Label" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Home"]
+[node name="Record" type="Label" parent="UI/VBox/Pages/Home/Top/NextGame/HBox/Home" unique_id=1482146361]
 layout_mode = 2
 text = "0 - 0 (0 - 0 CONF)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VSeparator2" type="VSeparator" parent="UI/VBox/Pages/Home/Top"]
+[node name="VSeparator2" type="VSeparator" parent="UI/VBox/Pages/Home/Top" unique_id=1181612708]
 layout_mode = 2
 
-[node name="Schedule" type="VBoxContainer" parent="UI/VBox/Pages/Home/Top"]
+[node name="Schedule" type="VBoxContainer" parent="UI/VBox/Pages/Home/Top" unique_id=1408511030]
 custom_minimum_size = Vector2(256, 288)
 layout_mode = 2
 size_flags_horizontal = 6
 theme_type_variation = &"FlatPanel"
 
-[node name="Label" type="Label" parent="UI/VBox/Pages/Home/Top/Schedule"]
+[node name="Label" type="Label" parent="UI/VBox/Pages/Home/Top/Schedule" unique_id=1905199526]
 layout_mode = 2
 text = "Season Schedule"
 vertical_alignment = 1
 
-[node name="Panel" type="Panel" parent="UI/VBox/Pages/Home/Top/Schedule"]
+[node name="Panel" type="Panel" parent="UI/VBox/Pages/Home/Top/Schedule" unique_id=1967848586]
 layout_mode = 2
 size_flags_vertical = 3
 theme_type_variation = &"FlatPanel"
 
-[node name="ScheduleWidget" parent="UI/VBox/Pages/Home/Top/Schedule/Panel" instance=ExtResource("5_i6i7d")]
+[node name="ScheduleWidget" parent="UI/VBox/Pages/Home/Top/Schedule/Panel" unique_id=1681872001 instance=ExtResource("5_i6i7d")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -323,122 +323,122 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HSeparator" type="HSeparator" parent="UI/VBox/Pages/Home"]
+[node name="HSeparator" type="HSeparator" parent="UI/VBox/Pages/Home" unique_id=1913129395]
 layout_mode = 2
 
-[node name="Bottom" type="HBoxContainer" parent="UI/VBox/Pages/Home"]
+[node name="Bottom" type="HBoxContainer" parent="UI/VBox/Pages/Home" unique_id=1986171820]
 custom_minimum_size = Vector2(0, 320)
 layout_mode = 2
 alignment = 1
 
-[node name="Control" type="Control" parent="UI/VBox/Pages/Home/Bottom"]
+[node name="Control" type="Control" parent="UI/VBox/Pages/Home/Bottom" unique_id=1503329613]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VSeparator" type="VSeparator" parent="UI/VBox/Pages/Home/Bottom"]
+[node name="VSeparator" type="VSeparator" parent="UI/VBox/Pages/Home/Bottom" unique_id=84877848]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Control2" type="Control" parent="UI/VBox/Pages/Home/Bottom"]
+[node name="Control2" type="Control" parent="UI/VBox/Pages/Home/Bottom" unique_id=1812733944]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VSeparator2" type="VSeparator" parent="UI/VBox/Pages/Home/Bottom"]
+[node name="VSeparator2" type="VSeparator" parent="UI/VBox/Pages/Home/Bottom" unique_id=1636885511]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Control3" type="Control" parent="UI/VBox/Pages/Home/Bottom"]
+[node name="Control3" type="Control" parent="UI/VBox/Pages/Home/Bottom" unique_id=442530449]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VSeparator3" type="VSeparator" parent="UI/VBox/Pages/Home/Bottom"]
+[node name="VSeparator3" type="VSeparator" parent="UI/VBox/Pages/Home/Bottom" unique_id=387900870]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Standings" type="VBoxContainer" parent="UI/VBox/Pages/Home/Bottom"]
+[node name="Standings" type="VBoxContainer" parent="UI/VBox/Pages/Home/Bottom" unique_id=381717689]
 custom_minimum_size = Vector2(256, 288)
 layout_mode = 2
 size_flags_horizontal = 6
 
-[node name="Label" type="Label" parent="UI/VBox/Pages/Home/Bottom/Standings"]
+[node name="Label" type="Label" parent="UI/VBox/Pages/Home/Bottom/Standings" unique_id=37638288]
 layout_mode = 2
 text = "Conference Standings"
 
-[node name="Panel" type="Panel" parent="UI/VBox/Pages/Home/Bottom/Standings"]
+[node name="Panel" type="Panel" parent="UI/VBox/Pages/Home/Bottom/Standings" unique_id=467500183]
 layout_mode = 2
 size_flags_vertical = 3
 theme_type_variation = &"FlatPanel"
 
-[node name="Standings" parent="UI/VBox/Pages" instance=ExtResource("7_7huaj")]
+[node name="Standings" parent="UI/VBox/Pages" unique_id=2021544380 instance=ExtResource("7_7huaj")]
 visible = false
 layout_mode = 1
 
-[node name="Strategy" parent="UI/VBox/Pages" instance=ExtResource("8_c3exi")]
+[node name="Strategy" parent="UI/VBox/Pages" unique_id=597167412 instance=ExtResource("8_c3exi")]
 visible = false
 layout_mode = 1
 
-[node name="System" parent="UI/VBox/Pages" instance=ExtResource("2_bd78g")]
+[node name="System" parent="UI/VBox/Pages" unique_id=1018085211 instance=ExtResource("2_bd78g")]
 visible = false
 layout_mode = 1
 
-[node name="PlaceholderTask" parent="UI/VBox/Pages" instance=ExtResource("5_g0xq8")]
+[node name="PlaceholderTask" parent="UI/VBox/Pages" unique_id=212863988 instance=ExtResource("5_g0xq8")]
 visible = false
 layout_mode = 1
 
-[node name="ConferenceChampionsTask" parent="UI/VBox/Pages" instance=ExtResource("10_sj56o")]
+[node name="ConferenceChampionsTask" parent="UI/VBox/Pages" unique_id=230235463 instance=ExtResource("10_sj56o")]
 visible = false
 layout_mode = 1
 
-[node name="PageButtons" type="HBoxContainer" parent="UI/VBox"]
+[node name="PageButtons" type="HBoxContainer" parent="UI/VBox" unique_id=2079974343]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 alignment = 1
 
-[node name="News" type="Button" parent="UI/VBox/PageButtons"]
+[node name="News" type="Button" parent="UI/VBox/PageButtons" unique_id=607502676]
 layout_mode = 2
 size_flags_horizontal = 3
 disabled = true
 text = "News"
 
-[node name="Schedules" type="Button" parent="UI/VBox/PageButtons"]
+[node name="Schedules" type="Button" parent="UI/VBox/PageButtons" unique_id=1565154094]
 layout_mode = 2
 size_flags_horizontal = 3
 disabled = true
 text = "Schedules"
 
-[node name="Standings" type="Button" parent="UI/VBox/PageButtons"]
+[node name="Standings" type="Button" parent="UI/VBox/PageButtons" unique_id=168116569]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Standings"
 
-[node name="Statistics" type="Button" parent="UI/VBox/PageButtons"]
+[node name="Statistics" type="Button" parent="UI/VBox/PageButtons" unique_id=1844770808]
 layout_mode = 2
 size_flags_horizontal = 3
 disabled = true
 text = "Statistics"
 
-[node name="Strategy" type="Button" parent="UI/VBox/PageButtons"]
+[node name="Strategy" type="Button" parent="UI/VBox/PageButtons" unique_id=144092092]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Strategy"
 
-[node name="MySchool" type="Button" parent="UI/VBox/PageButtons"]
+[node name="MySchool" type="Button" parent="UI/VBox/PageButtons" unique_id=227547166]
 layout_mode = 2
 size_flags_horizontal = 3
 disabled = true
 text = "My School"
 
-[node name="MyProfile" type="Button" parent="UI/VBox/PageButtons"]
+[node name="MyProfile" type="Button" parent="UI/VBox/PageButtons" unique_id=1077988891]
 layout_mode = 2
 size_flags_horizontal = 3
 disabled = true
 text = "My Profile"
 
-[node name="Ticker" type="Panel" parent="UI/VBox"]
+[node name="Ticker" type="Panel" parent="UI/VBox" unique_id=468091359]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
-[node name="Gameday" parent="UI" instance=ExtResource("9_c3yoy")]
+[node name="Gameday" parent="UI" unique_id=201902862 instance=ExtResource("9_c3yoy")]
 visible = false
 
 [connection signal="pressed" from="UI/VBox/TopBar/System" to="UI" method="_on_system_pressed"]

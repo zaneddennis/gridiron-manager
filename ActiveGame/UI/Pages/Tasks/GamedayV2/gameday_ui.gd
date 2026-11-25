@@ -2,6 +2,9 @@ extends CanvasLayer
 class_name GamedayUI
 
 
+@export var BoxScoreSummaryWidgetScene: PackedScene
+
+
 func Clear():
 	$Background.hide()
 	$Preview.hide()
@@ -9,27 +12,20 @@ func Clear():
 	#$CallPlay.hide()
 
 
-func ShowPreview(g: Game):
-	$Preview/Center/Logos/Home/VBox/Team.text = g.home_team.school.name
-	$Preview/Center/Logos/Away/VBox/Team.text = g.away_team.school.name
+func ShowSlate(user_game: Game, other_games: Array[Game]):
+	$InGame.hide()
+	$Slate.Activate(user_game, other_games)
 	
-	$Preview/Center/Logos/Home/VBox/Mascot.text = g.home_team.school.mascot
-	$Preview/Center/Logos/Away/VBox/Mascot.text = g.away_team.school.mascot
+	# TODO: move this inside Slate.Activate()
+	for n: Node in $Slate/VBox/HBox/ScrollContainer/VBox/GridBox.get_children():
+		n.queue_free()
 	
-	$Preview/Center/Logos/Home/VBox/TextureRect.texture = g.home_team.school.logo
-	$Preview/Center/Logos/Away/VBox/TextureRect.texture = g.away_team.school.logo
-	
-	$Preview/Center/Text/VBox/Date.text = "Week %d, 2025" % g.week
-	
-	Clear()
-	$Background.show()
-	$Preview.show()
+	for g: Game in other_games:
+		var widget: BoxScoreSummaryWidget = BoxScoreSummaryWidgetScene.instantiate()
+		widget.Activate(g)
+		$Slate/VBox/HBox/ScrollContainer/VBox/GridBox.add_child(widget)
 
 
-func ShowCallPlay(st: Strategy):
-	#$CallPlay/Panel/OffensePersonnel.Activate(st)
-	$CallPlay.Activate(st)
-	
-	Clear()
-	$Scoreboard.show()
-	$CallPlay.show()
+func ShowInGame(g: Game):
+	$Slate.hide()
+	$InGame.Activate(g)

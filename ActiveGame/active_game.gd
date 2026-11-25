@@ -23,10 +23,16 @@ func _ready() -> void:
 		print("\tLoading Debug Data: ", Constants.DEBUG_SAVE)
 		slot = Constants.DEBUG_SAVE
 		Database.Open(slot)
-	LoadSavedData()
+	
+	if TransitionManager.transition_type == TransitionManager.TRANSITION_TYPE.GAMEDAY_TO_AG:
+		current_date = TransitionManager.current_date
+		SaveData()
+	else:
+		LoadSavedData()
 	
 	if TransitionManager.first_time_new_game:
 		NewSeason()
+		TransitionManager.first_time_new_game = false
 	
 	NewWeek()
 
@@ -74,12 +80,13 @@ func _on_home_open_task(i: int) -> void:
 	
 	var page = $UI/VBox/Pages/PlaceholderTask
 	if task == TaskScheduler.gameday:
-		page = $UI/Gameday
-	elif task == TaskScheduler.conference_champions:
-		page = $UI/VBox/Pages/ConferenceChampionsTask
-	
-	#$UI.OpenPage(page)
-	page.Activate(self)
+		TransitionManager.AGToGameday(self)
+
+	else:
+		if task == TaskScheduler.conference_champions:
+			page = $UI/VBox/Pages/ConferenceChampionsTask
+
+		page.Activate(self)
 
 
 func _on_task_completed(task_page: TaskPage) -> void:

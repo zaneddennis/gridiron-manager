@@ -4,6 +4,7 @@ class_name Player
 
 var id: int
 var character: Character
+var jersey: int  # 0-99
 
 enum POSITION{QB, RB, WR, TE, OT, OG, C, DT, EDGE, LB, CB, S}
 var position: POSITION
@@ -15,6 +16,7 @@ static func FromDict(d: Dictionary) -> Player:
 	
 	p.id = d["ID"]
 	p.character = Character.FromDB(d["CharacterID"])
+	p.jersey = d["Jersey"]
 	
 	p.position = POSITION.values()[POSITION.keys().find(d["Position"])]
 	p.skill = d["Skill"]

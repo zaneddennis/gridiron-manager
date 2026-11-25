@@ -12,7 +12,7 @@ func _init() -> void:
 	# default strategy
 	
 	# offense formations
-	var spread = OffenseFormation.new("Spread")
+	var spread = OffenseFormation.new("Spread", "11")
 	spread.lineup = {
 		DepthChartSlot.new(Player.POSITION.C, 1):
 			LineupInstruction.new(LineupInstruction.ROLE.C),
@@ -29,7 +29,65 @@ func _init() -> void:
 		DepthChartSlot.new(Player.POSITION.RB, 1):
 			LineupInstruction.new(LineupInstruction.ROLE.RBS, -1),
 		DepthChartSlot.new(Player.POSITION.TE, 1):
-			LineupInstruction.new(LineupInstruction.ROLE.TE, 1)
+			LineupInstruction.new(LineupInstruction.ROLE.TE, 1),
+		DepthChartSlot.new(Player.POSITION.WR, 1):
+			LineupInstruction.new(LineupInstruction.ROLE.WRX, 1),
+		DepthChartSlot.new(Player.POSITION.WR, 2):
+			LineupInstruction.new(LineupInstruction.ROLE.WRZ, 1),
+		DepthChartSlot.new(Player.POSITION.WR, 3):
+			LineupInstruction.new(LineupInstruction.ROLE.WRA, 1)
+	} as Dictionary[DepthChartSlot, LineupInstruction]
+	
+	var i_formation = OffenseFormation.new("I-Formation", "21")
+	i_formation.lineup = {
+		DepthChartSlot.new(Player.POSITION.C, 1):
+			LineupInstruction.new(LineupInstruction.ROLE.C),
+		DepthChartSlot.new(Player.POSITION.OG, 1):
+			LineupInstruction.new(LineupInstruction.ROLE.OG, -1),
+		DepthChartSlot.new(Player.POSITION.OG, 2):
+			LineupInstruction.new(LineupInstruction.ROLE.OG, 1),
+		DepthChartSlot.new(Player.POSITION.OT, 1):
+			LineupInstruction.new(LineupInstruction.ROLE.OT, -1),
+		DepthChartSlot.new(Player.POSITION.OT, 2):
+			LineupInstruction.new(LineupInstruction.ROLE.OT, 1),
+		DepthChartSlot.new(Player.POSITION.QB, 1):
+			LineupInstruction.new(LineupInstruction.ROLE.QBU),
+		DepthChartSlot.new(Player.POSITION.RB, 1):
+			LineupInstruction.new(LineupInstruction.ROLE.RBS),
+		DepthChartSlot.new(Player.POSITION.RB, 2):
+			LineupInstruction.new(LineupInstruction.ROLE.FB),
+		DepthChartSlot.new(Player.POSITION.TE, 1):
+			LineupInstruction.new(LineupInstruction.ROLE.TE, 1),
+		DepthChartSlot.new(Player.POSITION.WR, 1):
+			LineupInstruction.new(LineupInstruction.ROLE.WRX, 1),
+		DepthChartSlot.new(Player.POSITION.WR, 2):
+			LineupInstruction.new(LineupInstruction.ROLE.WRZ, 1),
+	} as Dictionary[DepthChartSlot, LineupInstruction]
+	
+	var goal_line_o = OffenseFormation.new("Goal Line", "Jumbo")
+	goal_line_o.lineup = {
+		DepthChartSlot.new(Player.POSITION.C, 1):
+			LineupInstruction.new(LineupInstruction.ROLE.C),
+		DepthChartSlot.new(Player.POSITION.OG, 1):
+			LineupInstruction.new(LineupInstruction.ROLE.OG, -1),
+		DepthChartSlot.new(Player.POSITION.OG, 2):
+			LineupInstruction.new(LineupInstruction.ROLE.OG, 1),
+		DepthChartSlot.new(Player.POSITION.OT, 1):
+			LineupInstruction.new(LineupInstruction.ROLE.OT, -1),
+		DepthChartSlot.new(Player.POSITION.OT, 2):
+			LineupInstruction.new(LineupInstruction.ROLE.OT, 1),
+		DepthChartSlot.new(Player.POSITION.QB, 1):
+			LineupInstruction.new(LineupInstruction.ROLE.QBU),
+		DepthChartSlot.new(Player.POSITION.RB, 1):
+			LineupInstruction.new(LineupInstruction.ROLE.RBS),
+		DepthChartSlot.new(Player.POSITION.RB, 2):
+			LineupInstruction.new(LineupInstruction.ROLE.FB),
+		DepthChartSlot.new(Player.POSITION.TE, 1):
+			LineupInstruction.new(LineupInstruction.ROLE.TE, 1),
+		DepthChartSlot.new(Player.POSITION.TE, 2):
+			LineupInstruction.new(LineupInstruction.ROLE.TE, -1),
+		DepthChartSlot.new(Player.POSITION.WR, 1):
+			LineupInstruction.new(LineupInstruction.ROLE.WRX, 1),
 	} as Dictionary[DepthChartSlot, LineupInstruction]
 	
 	# defense formations
@@ -48,64 +106,39 @@ func _init() -> void:
 		DepthChartSlot.new(Player.POSITION.LB, 2):
 			DefenseLineupInstruction.new(LineupInstruction.ROLE.WILL, DefenseLineupInstruction.GAP.B),
 		DepthChartSlot.new(Player.POSITION.S, 1):
-			DefenseLineupInstruction.new(LineupInstruction.ROLE.STAR, DefenseLineupInstruction.GAP.H),
+			DefenseLineupInstruction.new(LineupInstruction.ROLE.STAR, DefenseLineupInstruction.GAP.SPILL),
 		DepthChartSlot.new(Player.POSITION.S, 2):
-			DefenseLineupInstruction.new(LineupInstruction.ROLE.FS, DefenseLineupInstruction.GAP.BALL)
+			DefenseLineupInstruction.new(LineupInstruction.ROLE.FS, DefenseLineupInstruction.GAP.ZERO)
 	} as Dictionary[DepthChartSlot, LineupInstruction]
 	
-	var hb_zone = OffensePlay.new(
-		"HB Zone", spread,
-		[
-			Play.ASSIGNMENT.ZONE_BLOCK,
-			Play.ASSIGNMENT.ZONE_BLOCK,
-			Play.ASSIGNMENT.ZONE_BLOCK,
-			Play.ASSIGNMENT.ZONE_BLOCK,
-			Play.ASSIGNMENT.ZONE_BLOCK,
-			Play.ASSIGNMENT.HANDOFF,
-			Play.ASSIGNMENT.RUN_INSIDE_ZONE,
-			Play.ASSIGNMENT.ZONE_BLOCK
-		],
-		OffensePlay.TYPE.RUN
-	)
-	var hb_dive = OffensePlay.new(
-		"HB Dive", spread,
-		[],
-		OffensePlay.TYPE.RUN,
-	)
-	#var quick_slants = PassPlay.new("Quick Slants")
-	
 	offense_plays = [
-		hb_zone, hb_dive
+		# Spread
+		RunPlay.new("HB Dive", spread, 6, LineupInstruction.GAP.A),
+		PassPlay.new("Quick Slants", spread,
+			{
+				8: PassPlay.ROUTE.SLANT,
+				9: PassPlay.ROUTE.SLANT,
+				10: PassPlay.ROUTE.SLANT
+			} as Dictionary[int, PassPlay.ROUTE]
+		),
+		OffensePlay.new("4 Verts", spread),
+		
+		# I-Formation
+		RunPlay.new(
+			"HB Dive", i_formation, 6, LineupInstruction.GAP.A
+		),
+		
+		# Goal Line
+		RunPlay.new("QB Sneak", goal_line_o, 6, LineupInstruction.GAP.A),
 	]
 	
 	var base = DefensePlay.new(
 		"Base", _425,
-		[
-			Play.ASSIGNMENT.RUSH,
-			Play.ASSIGNMENT.RUSH,
-			Play.ASSIGNMENT.RUSH,
-			Play.ASSIGNMENT.RUSH,
-			Play.ASSIGNMENT.RUSH,
-			Play.ASSIGNMENT.RUSH,
-			Play.ASSIGNMENT.RUSH,
-			Play.ASSIGNMENT.COVER_1
-		]
 	)
-	#var soft_zone = DefensePlay.new("Soft Zone", _425)
-	#var press = DefensePlay.new("Press Coverage", _425)
-	#var blitz = DefensePlay.new("Blitz", _425)
 	
 	defense_plays = [
-		base#, soft_zone, press, blitz
+		base
 	]
-
-
-#func GetOffensePersonnels() -> Array[OffensePersonnel]:
-#	return [
-#		OffensePersonnel.new(0, 0),
-#		OffensePersonnel.new(1, 0),
-#		OffensePersonnel.new(1, 1)
-#	]
 
 
 func PickOffensePlay():
@@ -113,3 +146,31 @@ func PickOffensePlay():
 
 func PickDefensePlay():
 	return defense_plays[0]
+
+
+func GetOffenseFormations() -> Dictionary:
+	var formations = {}
+	
+	for p: OffensePlay in offense_plays:
+		var f: OffenseFormation = p.formation
+		if not f.personnel in formations:
+			formations[f.personnel] = []
+		
+		if not f in formations[f.personnel]:
+			formations[f.personnel].append(f)
+	
+	return formations
+
+func GetDefenseFormations() -> Dictionary:
+	var formations = {}
+	
+	for p: DefensePlay in defense_plays:
+		var f: DefenseFormation = p.formation
+		var personnel_tmp = "all"
+		if not personnel_tmp in formations:
+			formations[personnel_tmp] = []
+		
+		if not f in formations[personnel_tmp]:
+			formations[personnel_tmp].append(f)
+	
+	return formations

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cjlbmnkc5chxa"]
+
+[ext_resource type="Script" uid="uid://crgyebteke0m1" path="res://ActiveGame/UI/Pages/Tasks/GamedayV2/Widgets/CallPlay/formation_option_line.gd" id="1_j0l1j"]
+[ext_resource type="PackedScene" uid="uid://bd1vc5a4mkv4r" path="res://ActiveGame/UI/Pages/Tasks/GamedayV2/Widgets/CallPlay/select_formation_button.tscn" id="2_hnbf4"]
+
+[node name="FormationOptionLine" type="HBoxContainer" unique_id=2068669085]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+script = ExtResource("1_j0l1j")
+SELECT_FORMATION_BUTTON = ExtResource("2_hnbf4")
+
+[node name="Personnel" type="Label" parent="." unique_id=546916721]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+text = "XX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridBox" type="GridContainer" parent="." unique_id=775024195]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/v_separation = 16
+columns = 3

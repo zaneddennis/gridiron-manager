@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://chu6yce26ilij"]
+
+[node name="Button" type="Button" unique_id=96314637]
+custom_minimum_size = Vector2(256, 64)
+size_flags_horizontal = 2
+text = "Play"

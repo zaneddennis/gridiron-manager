@@ -3,9 +3,6 @@ class_name BoxScoreSummaryWidget
 
 
 func Activate(g: Game):
-	#var away_school = School.FromDB(d["AwaySchoolID"])
-	#var home_school = School.FromDB(d["HomeSchoolID"])
-	
 	$VBox/Away/School.text = g.away_team.school.name
 	$VBox/Home/School.text = g.home_team.school.name
 	
@@ -14,7 +11,11 @@ func Activate(g: Game):
 	
 	$VBox/Footer/HBox/Conf.text = ""
 	
-	#$VBox/Away/Score.text = str(d["AwayScore"])
-	#$VBox/Home/Score.text = str(d["HomeScore"])
-	$VBox/Away/Score.text = str(g.away_score)
-	$VBox/Home/Score.text = str(g.home_score)
+	if g.away_score or g.home_score:  # a game cannot end 0-0  TODO: add an actual field to Game for started/complete/etc
+		$VBox/Away/Score.text = str(g.away_score)
+		$VBox/Home/Score.text = str(g.home_score)
+	else:
+		$VBox/Away/Score.text = "-"
+		$VBox/Home/Score.text = "-"
+		
+		$VBox/Footer/HBox/Final.text = ""

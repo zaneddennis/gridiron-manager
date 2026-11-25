@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bd1vc5a4mkv4r"]
+
+[node name="Button" type="Button" unique_id=588280907]
+custom_minimum_size = Vector2(256, 64)
+size_flags_horizontal = 6
+text = "Formation"

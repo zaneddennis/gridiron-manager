@@ -1,13 +1,45 @@
-[gd_scene load_steps=12 format=3 uid="uid://biuhtdm7yfdq0"]
+[gd_scene format=3 uid="uid://biuhtdm7yfdq0"]
 
 [ext_resource type="Script" uid="uid://c2oxngw7ywqxw" path="res://ActiveGame/UI/Pages/Tasks/GamedayV2/gameday_v_2.gd" id="1_u8isd"]
+[ext_resource type="Texture2D" uid="uid://diiksb3d0dhiv" path="res://ActiveGame/Gameday/square.png" id="2_5bsp0"]
 [ext_resource type="Script" uid="uid://c4vfqejgvlxd0" path="res://ActiveGame/UI/Pages/Tasks/GamedayV2/field.gd" id="2_ej0k2"]
 [ext_resource type="Script" uid="uid://shkco5lpmnpm" path="res://ActiveGame/UI/Pages/Tasks/GamedayV2/gameday_ui.gd" id="2_o3q4m"]
+[ext_resource type="PackedScene" uid="uid://7lckr6cdt8x1" path="res://ActiveGame/UI/Widgets/box_score_summary_widget.tscn" id="2_s3n22"]
 [ext_resource type="Texture2D" uid="uid://cckb56njtf8o8" path="res://Data/Data/Images/StockArt/pexels-boomheadshot-31785121.jpg" id="3_3xaay"]
 [ext_resource type="PackedScene" uid="uid://c4v6tsjthp7lu" path="res://ActiveGame/UI/Pages/Tasks/GamedayV2/Widgets/field_number.tscn" id="3_o7fke"]
+[ext_resource type="Script" uid="uid://s3ywo11o73tn" path="res://ActiveGame/Gameday/in_game_player.gd" id="3_pyg0v"]
+[ext_resource type="PackedScene" uid="uid://c3dxb3fyhd427" path="res://ActiveGame/Gameday/Assignments/assignment_run.tscn" id="3_xi077"]
+[ext_resource type="PackedScene" uid="uid://bxx2m8xh633rh" path="res://ActiveGame/Gameday/Assignments/PassRoutes/quick_slant.tscn" id="4_2lmr0"]
 [ext_resource type="Texture2D" uid="uid://cwv824emf0urk" path="res://Data/Data/Images/Gameday/test_ball_0.png" id="4_20mdp"]
+[ext_resource type="Texture2D" uid="uid://bcugw3h653cvb" path="res://ActiveGame/Gameday/square_outline.png" id="4_omspw"]
 [ext_resource type="Texture2D" uid="uid://b5aqqx1c5xg8o" path="res://Data/Data/Images/Logos/Final/DEFAULT.png" id="4_u8isd"]
 [ext_resource type="FontFile" uid="uid://ckjn3w2cv6ogc" path="res://Theme/Fonts/Emilio 19.ttf" id="5_a8enh"]
+[ext_resource type="PackedScene" uid="uid://dffpcyhm28woh" path="res://ActiveGame/Gameday/Assignments/PassRoutes/go.tscn" id="5_hfex3"]
+[ext_resource type="Script" uid="uid://chcu7rdudllno" path="res://ActiveGame/UI/Pages/Tasks/GamedayV2/gameday_slate.gd" id="7_3dg6n"]
+[ext_resource type="Script" uid="uid://bsiwpdxdwa5tq" path="res://ActiveGame/UI/Pages/Tasks/GamedayV2/slate_user_game.gd" id="8_6lrfj"]
+[ext_resource type="Texture2D" uid="uid://d0mq1qa23g68v" path="res://ActiveGame/UI/Pages/Tasks/GamedayV2/Widgets/Art/triangle.png" id="9_b8yfe"]
+[ext_resource type="Script" uid="uid://bn8yovns4pd7p" path="res://ActiveGame/UI/Pages/Tasks/GamedayV2/in_game.gd" id="10_bknjf"]
+[ext_resource type="Script" uid="uid://3igtpuiw5i7o" path="res://ActiveGame/UI/Pages/Tasks/GamedayV2/call_play.gd" id="14_k6fwc"]
+[ext_resource type="PackedScene" uid="uid://cjlbmnkc5chxa" path="res://ActiveGame/UI/Pages/Tasks/GamedayV2/Widgets/CallPlay/formation_option_line.tscn" id="15_j05ta"]
+[ext_resource type="PackedScene" uid="uid://chu6yce26ilij" path="res://ActiveGame/UI/Pages/Tasks/GamedayV2/Widgets/CallPlay/select_play_button.tscn" id="16_slx5l"]
+
+[sub_resource type="PackedScene" id="PackedScene_bs5ep"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("InGamePlayer", "Sprite2D", "self_modulate", "texture", "script", "Outline", "Sprite2D", "texture", "Jersey", "Label", "anchors_preset", "anchor_left", "anchor_top", "anchor_right", "anchor_bottom", "offset_left", "offset_top", "offset_right", "offset_bottom", "grow_horizontal", "grow_vertical", "text", "horizontal_alignment", "vertical_alignment"),
+"node_count": 3,
+"node_ids": PackedInt32Array(1253866567, 529010473, 905239698),
+"node_paths": [NodePath("."), NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 3, 2, 0, 3, 1, 4, 2, 0, 1073741824, 0, 6, 5, -1, 1, 7, 3, 0, 1073741825, 0, 9, 8, -1, 14, 10, 4, 11, 5, 12, 6, 13, 7, 14, 8, 15, 9, 16, 10, 17, 11, 18, 12, 19, 13, 20, 14, 21, 15, 22, 16, 23, 17, 0),
+"variants": [Color(0, 0, 0, 1), ExtResource("2_5bsp0"), ExtResource("3_pyg0v"), ExtResource("4_omspw"), 8, 0.5, 0.5, 0.5, 0.5, -36.0, -27.5, 4.0, -4.5, 2, 2, "00", 1, 1],
+"version": 3
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_bknjf"]
+font_size = 64
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3xaay"]
 atlas = ExtResource("3_3xaay")
@@ -23,26 +55,262 @@ font_size = 40
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
-[node name="GamedayV2" type="Node2D"]
+[node name="GamedayV2" type="Node2D" unique_id=816343866]
 script = ExtResource("1_u8isd")
+IN_GAME_PLAYER = SubResource("PackedScene_bs5ep")
+ASSIGNMENT_RUN = ExtResource("3_xi077")
+ASSIGNMENT_PASS_ROUTES = Array[PackedScene]([null, null, ExtResource("4_2lmr0"), null, null, null, null, null, null, ExtResource("5_hfex3")])
 
-[node name="Field" type="Polygon2D" parent="."]
+[node name="Field" type="Polygon2D" parent="." unique_id=64400307]
 visible = false
 color = Color(0.17254902, 0.3529412, 0.15686275, 1)
 script = ExtResource("2_ej0k2")
 LINE_NUMBER = ExtResource("3_o7fke")
 
-[node name="Ball" type="Sprite2D" parent="."]
+[node name="MidfieldLogo" type="Sprite2D" parent="Field" unique_id=682987007]
+rotation = 1.5707964
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("4_u8isd")
+
+[node name="Players" type="Node2D" parent="." unique_id=916050439]
+
+[node name="Assignments" type="Node2D" parent="." unique_id=773912562]
+
+[node name="Ball" type="Sprite2D" parent="." unique_id=28335234]
 visible = false
 texture = ExtResource("4_20mdp")
 
-[node name="Camera2D" type="Camera2D" parent="Ball"]
+[node name="Camera2D" type="Camera2D" parent="Ball" unique_id=89620216]
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="." unique_id=1597157588]
 script = ExtResource("2_o3q4m")
+BoxScoreSummaryWidgetScene = ExtResource("2_s3n22")
 
-[node name="Background" type="TextureRect" parent="UI"]
+[node name="Slate" type="Panel" parent="UI" unique_id=1865247634]
 visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_3dg6n")
+
+[node name="Background" type="ColorRect" parent="UI/Slate" unique_id=953750050]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBox" type="VBoxContainer" parent="UI/Slate" unique_id=202635356]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UserGame" type="HBoxContainer" parent="UI/Slate/VBox" unique_id=1294798381]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+script = ExtResource("8_6lrfj")
+
+[node name="AwayLogo" type="TextureRect" parent="UI/Slate/VBox/UserGame" unique_id=1399823786]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 6
+texture = ExtResource("4_u8isd")
+expand_mode = 1
+
+[node name="AwayText" type="VBoxContainer" parent="UI/Slate/VBox/UserGame" unique_id=666360324]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Team" type="Label" parent="UI/Slate/VBox/UserGame/AwayText" unique_id=77651408]
+layout_mode = 2
+text = "Team Mascots"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Record" type="Label" parent="UI/Slate/VBox/UserGame/AwayText" unique_id=1673610490]
+layout_mode = 2
+text = "0-0 (0-0)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Conference" type="Label" parent="UI/Slate/VBox/UserGame/AwayText" unique_id=379673299]
+layout_mode = 2
+text = "1st CONF"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AwayScore" type="Label" parent="UI/Slate/VBox/UserGame" unique_id=819837096]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "00"
+label_settings = SubResource("LabelSettings_bknjf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="At" type="Label" parent="UI/Slate/VBox/UserGame" unique_id=2011706261]
+layout_mode = 2
+size_flags_vertical = 1
+text = "@"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HomeScore" type="Label" parent="UI/Slate/VBox/UserGame" unique_id=2002295877]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "00"
+label_settings = SubResource("LabelSettings_bknjf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HomeText" type="VBoxContainer" parent="UI/Slate/VBox/UserGame" unique_id=159246215]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Team" type="Label" parent="UI/Slate/VBox/UserGame/HomeText" unique_id=1483685451]
+layout_mode = 2
+text = "Team Mascots"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Record" type="Label" parent="UI/Slate/VBox/UserGame/HomeText" unique_id=1829923699]
+layout_mode = 2
+text = "0-0 (0-0)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Conference" type="Label" parent="UI/Slate/VBox/UserGame/HomeText" unique_id=1659974545]
+layout_mode = 2
+text = "1st CONF"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HomeLogo" type="TextureRect" parent="UI/Slate/VBox/UserGame" unique_id=619307053]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 6
+texture = ExtResource("4_u8isd")
+expand_mode = 1
+
+[node name="Buttons" type="VBoxContainer" parent="UI/Slate/VBox/UserGame" unique_id=1209739718]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+
+[node name="Play" type="Button" parent="UI/Slate/VBox/UserGame/Buttons" unique_id=1859317000]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_vertical = 6
+text = "Play Game"
+
+[node name="Sim" type="Button" parent="UI/Slate/VBox/UserGame/Buttons" unique_id=1316317391]
+visible = false
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_vertical = 6
+text = "Simulate Game"
+
+[node name="Complete" type="Button" parent="UI/Slate/VBox/UserGame/Buttons" unique_id=1222248997]
+visible = false
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_vertical = 6
+text = "Complete Week"
+
+[node name="UserBye" type="HBoxContainer" parent="UI/Slate/VBox" unique_id=2145513915]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/Slate/VBox/UserBye" unique_id=939504940]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "You have a bye this week"
+vertical_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="UI/Slate/VBox/UserBye" unique_id=2038928097]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+
+[node name="Sim" type="Button" parent="UI/Slate/VBox/UserBye/Buttons" unique_id=1905451798]
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Simulate Week"
+
+[node name="Complete" type="Button" parent="UI/Slate/VBox/UserBye/Buttons" unique_id=671708593]
+visible = false
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_vertical = 6
+text = "Complete Week"
+
+[node name="HSeparator" type="HSeparator" parent="UI/Slate/VBox" unique_id=457684762]
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="UI/Slate/VBox" unique_id=1115778955]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/Slate/VBox/HBox" unique_id=1435693895]
+layout_mode = 2
+size_flags_horizontal = 3
+vertical_scroll_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="UI/Slate/VBox/HBox/ScrollContainer" unique_id=1793411935]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Spacer" type="Control" parent="UI/Slate/VBox/HBox/ScrollContainer/VBox" unique_id=924492811]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="GridBox" type="GridContainer" parent="UI/Slate/VBox/HBox/ScrollContainer/VBox" unique_id=164391611]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/v_separation = 32
+columns = 2
+
+[node name="Spacer2" type="Control" parent="UI/Slate/VBox/HBox/ScrollContainer/VBox" unique_id=766184650]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="UI/Slate/VBox/HBox" unique_id=2027870258]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Slate/VBox/HBox" unique_id=2120578642]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[node name="InGame" type="Control" parent="UI" unique_id=1985472502]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_bknjf")
+
+[node name="Background" type="TextureRect" parent="UI/InGame" unique_id=1693352255]
+visible = false
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -51,9 +319,10 @@ grow_vertical = 2
 texture = SubResource("AtlasTexture_3xaay")
 expand_mode = 5
 
-[node name="Preview" type="HBoxContainer" parent="UI"]
+[node name="Preview" type="HBoxContainer" parent="UI/InGame" unique_id=944776313]
 visible = false
 custom_minimum_size = Vector2(0, 768)
+layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
@@ -63,30 +332,30 @@ offset_bottom = 384.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Left" type="Panel" parent="UI/Preview"]
+[node name="Left" type="Panel" parent="UI/InGame/Preview" unique_id=568181847]
 custom_minimum_size = Vector2(256, 512)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="Center" type="VBoxContainer" parent="UI/Preview"]
+[node name="Center" type="VBoxContainer" parent="UI/InGame/Preview" unique_id=1405026529]
 custom_minimum_size = Vector2(800, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_constants/separation = 32
 
-[node name="Logos" type="HBoxContainer" parent="UI/Preview/Center"]
+[node name="Logos" type="HBoxContainer" parent="UI/InGame/Preview/Center" unique_id=1722628899]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Home" type="Panel" parent="UI/Preview/Center/Logos"]
+[node name="Home" type="Panel" parent="UI/InGame/Preview/Center/Logos" unique_id=2122193799]
 custom_minimum_size = Vector2(320, 400)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="VBox" type="VBoxContainer" parent="UI/Preview/Center/Logos/Home"]
+[node name="VBox" type="VBoxContainer" parent="UI/InGame/Preview/Center/Logos/Home" unique_id=676367595]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -94,13 +363,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="UI/Preview/Center/Logos/Home/VBox"]
+[node name="TextureRect" type="TextureRect" parent="UI/InGame/Preview/Center/Logos/Home/VBox" unique_id=1433313138]
 custom_minimum_size = Vector2(320, 320)
 layout_mode = 2
 texture = ExtResource("4_u8isd")
 expand_mode = 1
 
-[node name="Team" type="Label" parent="UI/Preview/Center/Logos/Home/VBox"]
+[node name="Team" type="Label" parent="UI/InGame/Preview/Center/Logos/Home/VBox" unique_id=914953282]
 layout_mode = 2
 size_flags_vertical = 3
 text = "OKLAHOMA"
@@ -108,7 +377,7 @@ label_settings = SubResource("LabelSettings_85hxx")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Mascot" type="Label" parent="UI/Preview/Center/Logos/Home/VBox"]
+[node name="Mascot" type="Label" parent="UI/InGame/Preview/Center/Logos/Home/VBox" unique_id=575938588]
 layout_mode = 2
 size_flags_vertical = 3
 text = "SOONERS"
@@ -116,19 +385,19 @@ label_settings = SubResource("LabelSettings_85hxx")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="At" type="Label" parent="UI/Preview/Center/Logos"]
+[node name="At" type="Label" parent="UI/InGame/Preview/Center/Logos" unique_id=889527697]
 layout_mode = 2
 text = "VS"
 label_settings = SubResource("LabelSettings_u8isd")
 horizontal_alignment = 1
 
-[node name="Away" type="Panel" parent="UI/Preview/Center/Logos"]
+[node name="Away" type="Panel" parent="UI/InGame/Preview/Center/Logos" unique_id=2111172562]
 custom_minimum_size = Vector2(320, 400)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="VBox" type="VBoxContainer" parent="UI/Preview/Center/Logos/Away"]
+[node name="VBox" type="VBoxContainer" parent="UI/InGame/Preview/Center/Logos/Away" unique_id=353514107]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -136,13 +405,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="UI/Preview/Center/Logos/Away/VBox"]
+[node name="TextureRect" type="TextureRect" parent="UI/InGame/Preview/Center/Logos/Away/VBox" unique_id=1142472404]
 custom_minimum_size = Vector2(320, 320)
 layout_mode = 2
 texture = ExtResource("4_u8isd")
 expand_mode = 1
 
-[node name="Team" type="Label" parent="UI/Preview/Center/Logos/Away/VBox"]
+[node name="Team" type="Label" parent="UI/InGame/Preview/Center/Logos/Away/VBox" unique_id=42883896]
 layout_mode = 2
 size_flags_vertical = 3
 text = "TEXAS"
@@ -150,7 +419,7 @@ label_settings = SubResource("LabelSettings_85hxx")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Mascot" type="Label" parent="UI/Preview/Center/Logos/Away/VBox"]
+[node name="Mascot" type="Label" parent="UI/InGame/Preview/Center/Logos/Away/VBox" unique_id=1431118551]
 layout_mode = 2
 size_flags_vertical = 3
 text = "LONGHORNS"
@@ -158,12 +427,12 @@ label_settings = SubResource("LabelSettings_85hxx")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text" type="Panel" parent="UI/Preview/Center"]
+[node name="Text" type="Panel" parent="UI/InGame/Preview/Center" unique_id=2042929805]
 custom_minimum_size = Vector2(512, 48)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="VBox" type="VBoxContainer" parent="UI/Preview/Center/Text"]
+[node name="VBox" type="VBoxContainer" parent="UI/InGame/Preview/Center/Text" unique_id=754380818]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -171,26 +440,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Setting" type="Label" parent="UI/Preview/Center/Text/VBox"]
+[node name="Setting" type="Label" parent="UI/InGame/Preview/Center/Text/VBox" unique_id=1396723964]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Zane Dennis Stadium - Nashville, TN"
+text = "John Smith Stadium - City, ST"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Date" type="Label" parent="UI/Preview/Center/Text/VBox"]
+[node name="Date" type="Label" parent="UI/InGame/Preview/Center/Text/VBox" unique_id=1239454037]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Week XX, 2026"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Start" type="Panel" parent="UI/Preview/Center"]
+[node name="Start" type="Panel" parent="UI/InGame/Preview/Center" unique_id=2059069754]
 custom_minimum_size = Vector2(256, 48)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Button" type="Button" parent="UI/Preview/Center/Start"]
+[node name="Button" type="Button" parent="UI/InGame/Preview/Center/Start" unique_id=819401747]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -199,23 +468,258 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "START GAME"
 
-[node name="Right" type="Panel" parent="UI/Preview"]
+[node name="Right" type="Panel" parent="UI/InGame/Preview" unique_id=1611775527]
 custom_minimum_size = Vector2(256, 512)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="Scoreboard" type="Panel" parent="UI"]
+[node name="Conclusion" type="HBoxContainer" parent="UI/InGame" unique_id=861613145]
+visible = false
+custom_minimum_size = Vector2(0, 768)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -384.0
+offset_bottom = 384.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left" type="Panel" parent="UI/InGame/Conclusion" unique_id=2131197916]
+custom_minimum_size = Vector2(256, 512)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Center" type="VBoxContainer" parent="UI/InGame/Conclusion" unique_id=1449835647]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+
+[node name="Final" type="Panel" parent="UI/InGame/Conclusion/Center" unique_id=1410556654]
+custom_minimum_size = Vector2(128, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="UI/InGame/Conclusion/Center/Final" unique_id=651457956]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "FINAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="UI/InGame/Conclusion/Center" unique_id=741258796]
+custom_minimum_size = Vector2(0, 768)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="VBox" type="VBoxContainer" parent="UI/InGame/Conclusion/Center/Panel" unique_id=1178072510]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Scores" type="HBoxContainer" parent="UI/InGame/Conclusion/Center/Panel/VBox" unique_id=1733777663]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+alignment = 1
+
+[node name="AwayLogo" type="TextureRect" parent="UI/InGame/Conclusion/Center/Panel/VBox/Scores" unique_id=1156454531]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("4_u8isd")
+expand_mode = 1
+
+[node name="AwayTexts" type="VBoxContainer" parent="UI/InGame/Conclusion/Center/Panel/VBox/Scores" unique_id=157041026]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="School" type="Label" parent="UI/InGame/Conclusion/Center/Panel/VBox/Scores/AwayTexts" unique_id=388470702]
+layout_mode = 2
+text = "SCHOOL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mascot" type="Label" parent="UI/InGame/Conclusion/Center/Panel/VBox/Scores/AwayTexts" unique_id=1271397676]
+layout_mode = 2
+text = "MASCOTS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Record" type="Label" parent="UI/InGame/Conclusion/Center/Panel/VBox/Scores/AwayTexts" unique_id=169702125]
+layout_mode = 2
+text = "0-0 (0-0)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AwayScore" type="Label" parent="UI/InGame/Conclusion/Center/Panel/VBox/Scores" unique_id=1640200281]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dash" type="Label" parent="UI/InGame/Conclusion/Center/Panel/VBox/Scores" unique_id=346115321]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HomeScore" type="Label" parent="UI/InGame/Conclusion/Center/Panel/VBox/Scores" unique_id=2045698673]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HomeTexts" type="VBoxContainer" parent="UI/InGame/Conclusion/Center/Panel/VBox/Scores" unique_id=174086812]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="School" type="Label" parent="UI/InGame/Conclusion/Center/Panel/VBox/Scores/HomeTexts" unique_id=502416368]
+layout_mode = 2
+text = "SCHOOL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mascot" type="Label" parent="UI/InGame/Conclusion/Center/Panel/VBox/Scores/HomeTexts" unique_id=181437326]
+layout_mode = 2
+text = "MASCOTS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Record" type="Label" parent="UI/InGame/Conclusion/Center/Panel/VBox/Scores/HomeTexts" unique_id=1403404564]
+layout_mode = 2
+text = "0-0 (0-0)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HomeLogo" type="TextureRect" parent="UI/InGame/Conclusion/Center/Panel/VBox/Scores" unique_id=1702405941]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("4_u8isd")
+expand_mode = 1
+
+[node name="HSeparator" type="HSeparator" parent="UI/InGame/Conclusion/Center/Panel/VBox" unique_id=877660211]
+layout_mode = 2
+
+[node name="Stats" type="HBoxContainer" parent="UI/InGame/Conclusion/Center/Panel/VBox" unique_id=1939027298]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="AwayPlayerStats" type="ScrollContainer" parent="UI/InGame/Conclusion/Center/Panel/VBox/Stats" unique_id=1456793121]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBox" type="VBoxContainer" parent="UI/InGame/Conclusion/Center/Panel/VBox/Stats/AwayPlayerStats" unique_id=1618602302]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Label" type="Label" parent="UI/InGame/Conclusion/Center/Panel/VBox/Stats/AwayPlayerStats/VBox" unique_id=1200103185]
+layout_mode = 2
+text = "Top Performers"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="UI/InGame/Conclusion/Center/Panel/VBox/Stats/AwayPlayerStats/VBox" unique_id=541552008]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="UI/InGame/Conclusion/Center/Panel/VBox/Stats" unique_id=2124709613]
+layout_mode = 2
+
+[node name="TeamStats" type="ScrollContainer" parent="UI/InGame/Conclusion/Center/Panel/VBox/Stats" unique_id=154348830]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBox" type="VBoxContainer" parent="UI/InGame/Conclusion/Center/Panel/VBox/Stats/TeamStats" unique_id=367560115]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Label" type="Label" parent="UI/InGame/Conclusion/Center/Panel/VBox/Stats/TeamStats/VBox" unique_id=2118628174]
+layout_mode = 2
+text = "Team Stats"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="UI/InGame/Conclusion/Center/Panel/VBox/Stats/TeamStats/VBox" unique_id=2140559492]
+layout_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="UI/InGame/Conclusion/Center/Panel/VBox/Stats" unique_id=1661411583]
+layout_mode = 2
+
+[node name="HomePlayerStats" type="ScrollContainer" parent="UI/InGame/Conclusion/Center/Panel/VBox/Stats" unique_id=970258949]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBox" type="VBoxContainer" parent="UI/InGame/Conclusion/Center/Panel/VBox/Stats/HomePlayerStats" unique_id=2058458987]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Label" type="Label" parent="UI/InGame/Conclusion/Center/Panel/VBox/Stats/HomePlayerStats/VBox" unique_id=1085519623]
+layout_mode = 2
+text = "Top Performers"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="UI/InGame/Conclusion/Center/Panel/VBox/Stats/HomePlayerStats/VBox" unique_id=868009786]
+layout_mode = 2
+
+[node name="Complete" type="Panel" parent="UI/InGame/Conclusion/Center" unique_id=2051665595]
+custom_minimum_size = Vector2(512, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="UI/InGame/Conclusion/Center/Complete" unique_id=888267978]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Complete Game"
+
+[node name="Right" type="Panel" parent="UI/InGame/Conclusion" unique_id=746456458]
+custom_minimum_size = Vector2(256, 512)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Scoreboard" type="Panel" parent="UI/InGame" unique_id=1330683869]
+visible = false
 custom_minimum_size = Vector2(640, 24)
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -320.0
+offset_top = 4.0
 offset_right = 320.0
-offset_bottom = 24.0
+offset_bottom = 28.0
 grow_horizontal = 2
 
-[node name="HBox" type="HBoxContainer" parent="UI/Scoreboard"]
+[node name="HBox" type="HBoxContainer" parent="UI/InGame/Scoreboard" unique_id=1826457998]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -224,68 +728,104 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Away" type="Label" parent="UI/Scoreboard/HBox"]
+[node name="Away" type="Label" parent="UI/InGame/Scoreboard/HBox" unique_id=304882845]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "AWAY"
 horizontal_alignment = 1
 
-[node name="VSeparator" type="VSeparator" parent="UI/Scoreboard/HBox"]
+[node name="VSeparator" type="VSeparator" parent="UI/InGame/Scoreboard/HBox" unique_id=2057884569]
 layout_mode = 2
 
-[node name="AwayScore" type="Label" parent="UI/Scoreboard/HBox"]
+[node name="AwayScore" type="Label" parent="UI/InGame/Scoreboard/HBox" unique_id=1778090503]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 text = "00"
 horizontal_alignment = 1
 
-[node name="VSeparator2" type="VSeparator" parent="UI/Scoreboard/HBox"]
+[node name="VSeparator2" type="VSeparator" parent="UI/InGame/Scoreboard/HBox" unique_id=1583571768]
 layout_mode = 2
 
-[node name="AwayBall" type="TextureRect" parent="UI/Scoreboard/HBox"]
+[node name="AwayBall" type="Control" parent="UI/InGame/Scoreboard/HBox" unique_id=1223261897]
 custom_minimum_size = Vector2(24, 0)
 layout_mode = 2
-expand_mode = 1
 
-[node name="VSeparator3" type="VSeparator" parent="UI/Scoreboard/HBox"]
+[node name="TextureRect" type="TextureRect" parent="UI/InGame/Scoreboard/HBox/AwayBall" unique_id=1269102155]
+visible = false
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_b8yfe")
+expand_mode = 1
+flip_h = true
+
+[node name="VSeparator3" type="VSeparator" parent="UI/InGame/Scoreboard/HBox" unique_id=662108959]
 layout_mode = 2
 
-[node name="Clock" type="Label" parent="UI/Scoreboard/HBox"]
+[node name="Center" type="HBoxContainer" parent="UI/InGame/Scoreboard/HBox" unique_id=1170597665]
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 1
+
+[node name="Quarter" type="Label" parent="UI/InGame/Scoreboard/HBox/Center" unique_id=538515605]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Q1"
+horizontal_alignment = 1
+
+[node name="Clock" type="Label" parent="UI/InGame/Scoreboard/HBox/Center" unique_id=1926466581]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "15:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VSeparator4" type="VSeparator" parent="UI/Scoreboard/HBox"]
+[node name="VSeparator4" type="VSeparator" parent="UI/InGame/Scoreboard/HBox" unique_id=198034698]
 layout_mode = 2
 
-[node name="HomeBall" type="TextureRect" parent="UI/Scoreboard/HBox"]
+[node name="HomeBall" type="Control" parent="UI/InGame/Scoreboard/HBox" unique_id=990695704]
 custom_minimum_size = Vector2(24, 0)
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/InGame/Scoreboard/HBox/HomeBall" unique_id=1060533346]
+visible = false
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_b8yfe")
 expand_mode = 1
 
-[node name="VSeparator5" type="VSeparator" parent="UI/Scoreboard/HBox"]
+[node name="VSeparator5" type="VSeparator" parent="UI/InGame/Scoreboard/HBox" unique_id=2116848796]
 layout_mode = 2
 
-[node name="HomeScore" type="Label" parent="UI/Scoreboard/HBox"]
+[node name="HomeScore" type="Label" parent="UI/InGame/Scoreboard/HBox" unique_id=331991732]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 text = "00"
 horizontal_alignment = 1
 
-[node name="VSeparator6" type="VSeparator" parent="UI/Scoreboard/HBox"]
+[node name="VSeparator6" type="VSeparator" parent="UI/InGame/Scoreboard/HBox" unique_id=924540198]
 layout_mode = 2
 
-[node name="Home" type="Label" parent="UI/Scoreboard/HBox"]
+[node name="Home" type="Label" parent="UI/InGame/Scoreboard/HBox" unique_id=1110497103]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "HOME"
 horizontal_alignment = 1
 
-[node name="DownDistance" type="Panel" parent="UI/Scoreboard"]
+[node name="DownDistance" type="Panel" parent="UI/InGame/Scoreboard" unique_id=1278502727]
 show_behind_parent = true
 custom_minimum_size = Vector2(96, 0)
 layout_mode = 1
@@ -301,7 +841,7 @@ offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Label" type="Label" parent="UI/Scoreboard/DownDistance"]
+[node name="Label" type="Label" parent="UI/InGame/Scoreboard/DownDistance" unique_id=778969182]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -312,4 +852,159 @@ text = "1st & 10"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="UI/Preview/Center/Start/Button" to="." method="_on_start_game_pressed"]
+[node name="CallPlay" type="Panel" parent="UI/InGame" unique_id=617316849]
+custom_minimum_size = Vector2(1024, 256)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -512.0
+offset_top = -288.0
+offset_right = 512.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("14_k6fwc")
+FORMATION_OPTION_LINE = ExtResource("15_j05ta")
+SELECT_PLAY_BUTTON = ExtResource("16_slx5l")
+
+[node name="Formation" type="VBoxContainer" parent="UI/InGame/CallPlay" unique_id=88555968]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="Label" parent="UI/InGame/CallPlay/Formation" unique_id=2055003579]
+layout_mode = 2
+text = "SELECT FORMATION"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="UI/InGame/CallPlay/Formation" unique_id=831588184]
+layout_mode = 2
+
+[node name="ScrollBox" type="ScrollContainer" parent="UI/InGame/CallPlay/Formation" unique_id=2088583173]
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="UI/InGame/CallPlay/Formation/ScrollBox" unique_id=57302668]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Play" type="VBoxContainer" parent="UI/InGame/CallPlay" unique_id=44677017]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="Label" parent="UI/InGame/CallPlay/Play" unique_id=600368880]
+layout_mode = 2
+text = "SELECT PLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="UI/InGame/CallPlay/Play" unique_id=1337260174]
+layout_mode = 2
+
+[node name="ScrollBox" type="ScrollContainer" parent="UI/InGame/CallPlay/Play" unique_id=604763920]
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 2
+
+[node name="GridBox" type="GridContainer" parent="UI/InGame/CallPlay/Play/ScrollBox" unique_id=1533445017]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 3
+
+[node name="AIDefenseInfo" type="Panel" parent="UI/InGame/CallPlay" unique_id=1094996769]
+visible = false
+custom_minimum_size = Vector2(256, 72)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.0
+offset_top = -400.0
+offset_right = 160.0
+offset_bottom = -328.0
+grow_horizontal = 2
+
+[node name="VBox" type="VBoxContainer" parent="UI/InGame/CallPlay/AIDefenseInfo" unique_id=1629073393]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="Label" parent="UI/InGame/CallPlay/AIDefenseInfo/VBox" unique_id=391267028]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+text = "Defense Personnel - XXX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="UI/InGame/CallPlay/AIDefenseInfo/VBox" unique_id=195617562]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="UI/InGame/CallPlay/AIDefenseInfo/VBox" unique_id=2090812717]
+layout_mode = 2
+size_flags_vertical = 3
+text = "X DT, Y LB/EDGE, Z DB"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayDescription" type="Panel" parent="UI/InGame" unique_id=101079837]
+visible = false
+custom_minimum_size = Vector2(1024, 128)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = 96.0
+offset_right = 128.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/InGame/PlayDescription" unique_id=462127591]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/InGame/PlayDescription/HBoxContainer" unique_id=2134403348]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Offense Play: //
+Defense Play: //
+[Player] does thing for [] yards."
+
+[node name="NextPlay" type="Button" parent="UI/InGame/PlayDescription/HBoxContainer" unique_id=200247106]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+text = "Next Play"
+
+[connection signal="pressed" from="UI/Slate/VBox/UserGame/Buttons/Play" to="." method="_on_play_user_game_pressed"]
+[connection signal="pressed" from="UI/Slate/VBox/UserGame/Buttons/Complete" to="." method="_on_complete_week_pressed"]
+[connection signal="pressed" from="UI/Slate/VBox/UserBye/Buttons/Sim" to="." method="_on_simulate_week_pressed"]
+[connection signal="pressed" from="UI/Slate/VBox/UserBye/Buttons/Complete" to="." method="_on_complete_week_pressed"]
+[connection signal="pressed" from="UI/InGame/Preview/Center/Start/Button" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="UI/InGame/Conclusion/Center/Complete/Button" to="." method="_on_complete_game_pressed"]
+[connection signal="formation_hovered" from="UI/InGame/CallPlay" to="." method="_on_offense_formation_hovered"]
+[connection signal="play_hovered" from="UI/InGame/CallPlay" to="." method="_on_offense_play_hovered"]

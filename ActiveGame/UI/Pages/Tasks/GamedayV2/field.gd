@@ -33,8 +33,11 @@ func PlaceLines():
 	for y in [45, 40, 35, 30, 25, 20, 15, 10, 5, 0]:
 		PlaceLine(y, -1)
 		PlaceLine(y, 1)
+	
+	PlaceLine(25, 1, Color.CORNFLOWER_BLUE, "LOS")
+	PlaceLine(35, 1, Color.YELLOW, "LTG")
 
-func PlaceLine(yardline: int, side: int):
+func PlaceLine(yardline: int, side: int, color: Color = Color.WHITE, n: String=""):
 	var y = side * (50 - yardline) * DISPLAY_SCALE
 	
 	var line = Line2D.new()
@@ -44,11 +47,15 @@ func PlaceLine(yardline: int, side: int):
 	] as PackedVector2Array
 	line.position.y = y
 	line.width = 2
+	line.default_color = color
 	add_child(line)
 	
 	if yardline % 10 == 0 and yardline > 0:
 		PlaceNumber(line, str(yardline), -1)
 		PlaceNumber(line, str(yardline), 1)
+	
+	if n:
+		line.name = n
 
 
 

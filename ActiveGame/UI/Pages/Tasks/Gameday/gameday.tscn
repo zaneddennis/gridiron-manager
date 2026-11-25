@@ -40,6 +40,7 @@ custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
 [node name="Complete" type="Button" parent="Panel/ScrollBox/VBox" index="7"]
+visible = false
 custom_minimum_size = Vector2(1200, 64)
 layout_mode = 2
 size_flags_horizontal = 4

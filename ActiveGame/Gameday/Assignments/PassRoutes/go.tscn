@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dffpcyhm28woh"]
+
+[ext_resource type="PackedScene" uid="uid://csxt0igt7mg5k" path="res://ActiveGame/Gameday/Assignments/PassRoutes/pass_route.tscn" id="1_0tstx"]
+
+[node name="Go" unique_id=339556473 instance=ExtResource("1_0tstx")]
+points = PackedVector2Array(0, 0, 0, -200)

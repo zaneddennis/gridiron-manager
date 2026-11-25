@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://c3dxb3fyhd427"]
+
+[node name="AssignmentRun" type="Line2D" unique_id=1371996180]
+points = PackedVector2Array(0, 0, 0, -96)
+width = 4.0

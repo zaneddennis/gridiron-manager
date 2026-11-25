@@ -54,4 +54,7 @@ func UpdateDB():
 
 
 func _to_string() -> String:
-	return "<Game:%d>" % id
+	return "<Game:%d:%s@%s>" % [
+		id,
+		away_team.id, home_team.id
+	]
